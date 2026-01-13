@@ -1,17 +1,35 @@
-# 🛠️ CRTP Notes
+# 🔐 Active Directory & CRTP Notes
 
-This book is a collection of notes and tips that I have gathered during my studies for the Certified Red Team Professional (CRTP) exam.\
-\
-It is designed to help me **understand** and **remember** the key concepts covered in the exam, and I plan to use it as my main cheat sheet during the test.\
-\
-The book is primarily intended for viewing on Gitbook, but feel free to fork it on GitHub and make any changes or additions you think would be helpful.
+> **Personal study notes for Active Directory attacks, defenses, and CRTP lab practice**  
+> Built for learning, revision, and hands-on labs.
 
-Ready to conquer CRTP! 🚀
+---
 
-> **Disclaimer:** These notes are based on my understanding and are not meant to be your standalone resource.\
-> For more detailed notes check [The Hacker Recipes](https://www.thehacker.recipes/) or [ired.team](https://www.ired.team/).
+## 📌 About This Repository
 
-***
+This GitBook contains **structured notes** created while practicing **Active Directory security concepts** and **CRTP-style labs**.
+
+The goal of these notes is to:
+- Understand **how AD attacks work**
+- Learn **why misconfigurations happen**
+- Practice techniques in **lab environments only**
+- Build a strong **blue + red team mindset**
+
+⚠️ **For educational purposes only** — all techniques are practiced in isolated lab environments.
+
+---
+
+## 🧠 Topics Covered
+
+- 🏢 Active Directory Fundamentals  
+- 🔑 Kerberos (TGT, TGS, Golden & Silver Tickets)  
+- 🧑‍💻 Privilege Escalation Techniques  
+- 🔄 Lateral Movement  
+- 🧬 Credential Dumping  
+- 🛡️ Detection & Defensive Concepts   
+- 🧰 Tool Notes (Rubeus, Mimikatz, PowerView.ps1, BloodHound, etc.)
+
+---
 
 ## Project links
 
