@@ -15,23 +15,7 @@ Ready to conquer CRTP! 🚀
 
 ## Project links
 
-* [Github](https://github.com/dudisamarel/crtp-notes)
-* [Gitbook](https://dudisamarel.gitbook.io/crtp-notes/)
+* [Github](https://github.com/s4m98/CRTP)
+* [Gitbook](https://h0ax.gitbook.io/crtp-notes/)
 
-## Contact Us
-
-{% stepper %}
-{% step %}
-### Dudi Samarel
-
-[LinkedIn](https://www.linkedin.com/in/dudi-samarel-1a595a1a9/)\
-dudisamarel@gmail.com
-{% endstep %}
-
-{% step %}
-### Aniruddha Ghosh
-
-[LinkedIn](https://www.linkedin.com/in/ghoshzsh/)\
-[Portfolio](https://iamghosh.in/)
-{% endstep %}
-{% endstepper %}
+## Thanks for visiting...
