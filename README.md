@@ -1,0 +1,2 @@
+# CRTP
+Complete CRTP Notes
