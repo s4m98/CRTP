@@ -10,15 +10,28 @@ Kerberos is a ticket-based authentication protocol that enables secure communica
 
 ### The Kerberos authentication flow works like this:
 
-**1. Authentication Service Request:** The client sends an authentication request encrypted with their password to the KDC.\
-\
-**2. Authentication Service Response:** If the KDC can decrypt the request with the user’s password, the client has proven their identity. The KDC then responds with a Ticket-Granting-Ticket (TGT), encrypted with the KDC’s secret key.\
-\
-**3. Ticket-Granting-Ticket Request:** The client presents the TGT back to the KDC requesting access to a destination service.\
-\
-**4. Ticket-Granting-Ticket Response:** If the KDC can decrypt the TGT, it proves the client presented a valid TGT, as no other entity knows the KDC’s secret key. The KDC responds with a Service Ticket (ST), encrypted with the destination service’s password.\
-\
-**5. Service Ticket Request:** The client passes the ST to the destination service, requesting access. If the destination service can decrypt the service ticket, it proves the ticket is valid, as only the KDC and the service itself should possess the service’s password.
+**Login & Initial Request**
+  User enters username and password.
+  Client sends a request to the Authentication Server (AS) for a Ticket Granting Ticket (TGT).\
+
+**Authentication Server Response**
+  AS checks credentials against its database.
+  If valid, it sends back an encrypted TGT (using the user’s secret key derived from their password).\
+
+**Requesting Service Access**
+  Client presents the TGT to the Ticket Granting Server (TGS) when it wants to access a service (e.g., mssql,file server, email).\
+
+**Service Ticket Issuance**
+  TGS validates the TGT and issues a Service Ticket, encrypted with (krbtgt service account password hash) the service’s secret key.\
+
+**Accessing the Service**
+  Client presents the Service Ticket to the target server.
+  The server decrypts it using its secret key, verifies authenticity, and grants access.\
+
+**Mutual Authentication**
+  The server\
+
 <figure><img src="../assets/kerberos-auth.png" alt=""><figcaption></figcaption></figure>
+
 
 
