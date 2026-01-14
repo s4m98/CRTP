@@ -23,7 +23,7 @@ cme smb <networkIP>/<cidr> --gen-relay-list relayTargets.txt
 
 ### Relaying hashes <a href="#relaying-hashes" id="relaying-hashes"></a>
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Found from <a href="https://aas-s3curity.gitbook.io/cheatsheet/internalpentest/active-directory/exploitation/exploit-without-account/smb-relay">here</a></p></figcaption></figure>
+<figure><img src="../assets/image.png" alt=""><figcaption><p>Found from <a href="https://aas-s3curity.gitbook.io/cheatsheet/internalpentest/active-directory/exploitation/exploit-without-account/smb-relay">here</a></p></figcaption></figure>
 
 Create a shortcurt lnk file with the below content  and place it inside th shared AI folder.
 
