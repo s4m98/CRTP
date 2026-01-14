@@ -2,8 +2,8 @@
 
 Kerberos is a ticket-based authentication protocol that enables secure communication in untrusted environments by first establishing two-party trust through a mutual third party. Kerberos requires three parties:
 
-**Client:** The user or system requesting access to a resource.
-**Server:** The destination resource the client wants to access.
+**Client:** The user or system requesting access to a resource.\
+**Server:** The destination resource the client wants to access.\
 **Key Distribution Center (KDC):** A trusted third party responsible for authenticating users and issuing tickets.
 
 ## The ticketing process
@@ -20,4 +20,5 @@ Kerberos is a ticket-based authentication protocol that enables secure communica
 \
 **5. Service Ticket Request:** The client passes the ST to the destination service, requesting access. If the destination service can decrypt the service ticket, it proves the ticket is valid, as only the KDC and the service itself should possess the service’s password.
 <figure><img src="../assets/kerberos-auth.png" alt=""><figcaption></figcaption></figure>
+
 
