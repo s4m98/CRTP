@@ -1,6 +1,6 @@
 # Table of contents
 
-* 🛠️ [CRTP](README.md)
+* 🛠️ [CRTP Notes](README.md)
 * ⚙️ [CRTP Methodology](crtp-methodology.md)
 
 ## 💡 Misc
