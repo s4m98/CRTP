@@ -6,7 +6,7 @@ The Diagram below shows how Client from trusted domain can ask for access to oth
 
 We can see that in order to allow access to the service hosted on Domain B, a TGT is returned within a TGS-REP signed with the Inter-Realm Trust Key.
 
-<img src="../../.gitbook/assets/file.excalidraw (2).svg" alt="" class="gitbook-drawing">
+<img src="../../assets/file.excalidraw (2).svg" alt="" class="gitbook-drawing">
 
 ## Exploitation
 
