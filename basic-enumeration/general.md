@@ -1,15 +1,15 @@
 # General
-# NOTE: import PowerView.ps1 script;)
+## NOTE: import PowerView.ps1 script;)
 
-# Get Current User
+## Get Current User
 ```batch
 Get-DomainUser
 ```
-# Expand a Single Property
+## Expand a Single Property
 ```batch
 Get-DomainUser | Select-Object -ExpandProperty samaccountname
 ```
-# Select Multiple Properties (without expand)
+## Select Multiple Properties (without expand)
 ```batch
 Get-DomainUser | Select-Object samaccountname, logoncount
 ```
