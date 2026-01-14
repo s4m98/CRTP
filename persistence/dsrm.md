@@ -3,6 +3,7 @@
 Directory Services Restore Mode (DSRM) is a Safe Mode boot option for Windows Server domain controllers and the main purpose of DSRM is to help system admins log in to the system to restore or repair an AD database.\
 \
 Every Domain controller has local administrator account called "Administrator" and his password is the DSRM password.
+\
 A lot of times organizations will not even know what the DSRM password is.
 
 ## Dump DSRM NTLM hash
