@@ -1,11 +1,11 @@
 # General
 ## NOTE: import PowerView.ps1 script;)
 
-## Get Current User
+### Get Current User
 ```batch
 Get-DomainUser
 ```
-## Expand a Single Property
+### Expand a Single Property
 ```batch
 Get-DomainUser | Select-Object -ExpandProperty samaccountname
 ```
@@ -13,11 +13,11 @@ Get-DomainUser | Select-Object -ExpandProperty samaccountname
 ```batch
 Get-DomainUser | Select-Object samaccountname, logoncount
 ```
-# Get current domain
+## Get current domain
 ```batch
 Get-Domain
 ```
-# Get object of another domain
+## Get object of another domain
 ```batch
 Get-Domain -Domain moneycorp.local
 ```
