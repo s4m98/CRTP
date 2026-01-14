@@ -144,7 +144,7 @@ Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False
 
 Disable manually
 
-<figure><img src="../.gitbook/assets/disable-firewall.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../assets/disable-firewall.png" alt=""><figcaption></figcaption></figure>
 
 ## AV Signatures Bypass
 
@@ -164,7 +164,7 @@ AmsiTrigger_x64.exe -i PowerUp.ps1
 
 Example for scanning
 
-<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../assets/amsitrigger-2.png" alt=""><figcaption></figcaption></figure>
 
 Example for bypassing
 
