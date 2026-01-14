@@ -35,14 +35,14 @@ Parent-Child domains will be always two-way transitive.
 
 Tree-Root will always be two way transitive.
 
-<figure><img src="../.gitbook/assets/trust-relationships.png" alt=""><figcaption><p>default trust relationship flows</p></figcaption></figure>
+<figure><img src="../assets/trust-relationships.png" alt=""><figcaption><p>default trust relationship flows</p></figcaption></figure>
 
 ## External Trusts
 
 Trust between two domains in different forests when forests do not have a trust relationship.\
 Can be one-way or two-way but can't be transitive.
 
-<img src="../.gitbook/assets/file.excalidraw (1) (1).svg" alt="" class="gitbook-drawing">
+<img src="../assets/file.excalidraw (1) (1).svg" alt="" class="gitbook-drawing">
 
 ## Forest Trusts
 
@@ -50,7 +50,7 @@ Forest trusts are manually created between two root forests,.
 
 **Important:** Forest trusts can only be created between two forests and can't be implicitly extended to a third forest.
 
-<figure><img src="../.gitbook/assets/forest-trusts-diagram.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../assets/forest-trusts-diagram.png" alt=""><figcaption></figcaption></figure>
 
 This example configuration provides the following access:
 
