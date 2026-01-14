@@ -22,13 +22,13 @@ Once we have administrator privileges it is possible to create a backdoor by mod
 
 It is possible to add the non-admin user to the ACE using the `Component Services` and `Computer Management`.
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Component Services</p></figcaption></figure>
+<figure><img src="../assets/image (1).png" alt=""><figcaption><p>Component Services</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>Computer Management</p></figcaption></figure>
+<figure><img src="../assets/image (2).png" alt=""><figcaption><p>Computer Management</p></figcaption></figure>
 
 Apply to all namespaces
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption><p>Computer Management</p></figcaption></figure>
+<figure><img src="../assets/image (4).png" alt=""><figcaption><p>Computer Management</p></figcaption></figure>
 
 <pre class="language-powershell"><code class="lang-powershell"><strong># Check if worked
 </strong><strong># Worked if didn't get access denied 
@@ -58,6 +58,7 @@ Set-RemoteWMI -SamAccountName student1 -ComputerName dcorp-dc -Credential Admini
 
 # Remove
 Set-RemoteWMI -SamAccountName student1 -ComputerName dcorp-dc-namespace 'root\cimv2' -Remove -Verbose
+
 
 </code></pre>
 
