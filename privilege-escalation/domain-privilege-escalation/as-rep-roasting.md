@@ -1,4 +1,5 @@
 # AS-REP Roasting
+AS-REP Roasting is an Active Directory attack that targets user accounts with Kerberos pre‑authentication disabled. Attackers can request authentication data (AS‑REP responses) for these accounts, extract password hashes, and crack them offline to gain access.
 
 ## Enumerate
 
