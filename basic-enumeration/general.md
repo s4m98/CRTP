@@ -60,6 +60,10 @@ Get-DomainComputer | select Name Get-DomainComputer -OperatingSystem "*Server 20
 ### Get all the groups in the current domain
 ```batch
 Get-DomainGroup | select Name Get-DomainGroup -Domain <targetdomain>
+Get-ADGroup -Identity "Domain Admins"
+Get-ADGroupMember -Identity "Domain Admins"
+Get-ADGroupMember -Identity "Enterprise Admins"
+Get-ADGroupMember -Identity "Administrators"
 ```
 ### Get all groups containing the word “admin” in group name
 ```batch
