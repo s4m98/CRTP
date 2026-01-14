@@ -13,6 +13,7 @@
 
 * [General](basic-enumeration/general.md)
 * [Network](basic-enumeration/network.md)
+* [Kerberos Authentication](basic-enumeration/kerberos-authentication.md)
 
 ## ⛏️ AD Enumeration
 
