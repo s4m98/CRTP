@@ -4,16 +4,10 @@
 
 {% tabs %}
 {% tab title="PowerView" %}
-Get list of OUs in current domain
+Get list of GPOs in current domain
 
 ```powershell
-Get-DomainOU
-
-# list the GPOs:
 Get-DomainGPO
-
-# To see just the names of the OUs:
-Get-DomainGPO -ComputerIdentity dcorp-student1
 ```
 
 Get OUs on which the GPO is applied. From OUs get the objects.
@@ -23,8 +17,6 @@ Get OUs on which the GPO is applied. From OUs get the objects.
 Get-DomainOU| Where-Object {
     $_.gplink -like "*{0BF8D01C-1F62-4BDC-958C-57140B67D147}*"
 }
-# || OR || list all the computers in the Specific OU:
-(Get-DomainOU -Identity <OU Name>).distinguishedname | %{Get-DomainComputer -SearchBase $_} | select name
 
 # Get the objects inside a OU
 Get-DomainComputer -SearchBase "OU=DevOps,DC=dollarcorp,DC=moneycorp,DC=local"
