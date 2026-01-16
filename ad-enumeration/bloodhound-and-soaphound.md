@@ -42,6 +42,11 @@ SharpHound.exe --collectionmethods Group, GPOLocalGroup, Session, Trusts, ACL, C
 In **legacy** Bloodhound remove **Certservices**. For Community Edition it’s fine.
 {% endhint %}
 
+### To enumerate the ACLs for the Applocked and DevOps GPO, let's use the BloodHound CE UI.
+
+### Search for Applocker in the UI -> Click on the node -> Click on Inboud Object Control
+
+
 ### SoapHound
 
 More stealthy option which uses port 9389
