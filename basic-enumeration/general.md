@@ -103,7 +103,7 @@ Get-LoggedonLocal -ComputerName dcorp-adminsrv
 ```batch
 Get-LastLoggedOn -ComputerName dcorp-adminsrv
 ```
-{% endtab %}
+{% endtab %} {% endtabs %}
 
 {% tab title="AD Module" %}
 Enumerate all the users in the current domain using the ADModule:
