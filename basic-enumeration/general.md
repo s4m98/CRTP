@@ -148,6 +148,10 @@ Import-Module C:\AD\Tools\PowerHuntShares.psm1
 Invoke-HuntSMBShares -NoPing -OutputDirectory C:\AD\Tools\ -HostList C:\AD\Tools\<domain user file name>
 ```
 **Note:** You need to copy the summary report to your host machine because the report needs interent access. The Summary Report page shows, well, the summary.
+<figure><img src="../assets/powerhuntshare-1.png" alt=""><figcaption></figcaption></figure>
+
+**TIP:** Go to ShareGraph -> search dcorp-ci -> Right click on dcorp-ci node -> Click expand. Tt turns out that 'Everyone' has privileges on the 'AI' folder.
+<figure><img src="../assets/powerhuntshare-2.png" alt=""><figcaption></figcaption></figure>
 
 {% endtab %} 
 
