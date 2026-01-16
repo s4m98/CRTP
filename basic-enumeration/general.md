@@ -107,6 +107,7 @@ Get-LastLoggedOn -ComputerName dcorp-adminsrv
 {% endtabs %}
 
 {% tab title="AD Module" %}
+
 Enumerate all the users in the current domain using the ADModule:
 ```batch
 C:\AD\Tools\InviShell\RunWithRegistryNonAdmin.bat
