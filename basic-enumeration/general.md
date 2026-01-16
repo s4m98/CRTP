@@ -4,6 +4,8 @@
 ### Get Current User
 ```batch
 Get-DomainUser
+# Specific user by identity
+Get-DomainUser -Identity student1
 ```
 ### Expand a Single Property
 ```batch
