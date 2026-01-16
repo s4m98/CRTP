@@ -1,27 +1,29 @@
 # General
 📝 **Note:** import PowerView.ps1 script;)
 
-{% tabs %} {% tab title="PowerView" %}
+{% tabs %} 
+{% tab title="PowerView" %}
+
 ### Get Current User
-```batch
+```powershell
 Get-DomainUser
 # Specific user by identity
 Get-DomainUser -Identity student1
 ```
 ### Expand a Single Property
-```batch
+```powershell
 Get-DomainUser | Select-Object -ExpandProperty samaccountname
 ```
 ### Select Multiple Properties (without expand)
-```batch
+```powershell
 Get-DomainUser | Select-Object samaccountname, logoncount
 ```
 ### Get current domain
-```batch
+```powershell
 Get-Domain
 ```
 ### Get object of another domain
-```batch
+```powershell
 Get-Domain -Domain moneycorp.local
 ```
 ### Get domain SID for the current domain
