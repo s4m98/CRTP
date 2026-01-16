@@ -93,11 +93,17 @@ Get-ADGroupMember -Identity "Administrators"
 ### Get all groups containing the word “admin” in group name
 ```powershell
 Get-DomainGroup *admin*
+Get-NetGroup -GroupName *admin*
+Get-NetGroup -GroupName *admin* -Doamin moneycorp.local
 ```
+**Note:** Groups like "Enterprise Admins","Enterprise Key Admins",etc will not be displayed in the above commands unless the domain is not specified because it is only available on the domain controllers of the forest root.
+
 ### Get all the members of the Domain Admins group
 ```powershell
 Get-DomainGroupMember -Identity "Domain Admins" -Recurse
 ```
+**Note:** Make sure to check the RID which is the last few charachters of the SID of the member-user as the name of the member-user might be different/changed but the RID is unique. For example : It might be an Administrator account having a differnt/changed member-name but if you check the RID and it is "500" then it is an Administrator account.
+
 ### Get the group membership for a user:
 ```powershell
 Get-DomainGroup -UserName "student27"
@@ -122,6 +128,27 @@ Get-LoggedonLocal -ComputerName dcorp-adminsrv
 ```powershell
 Get-LastLoggedOn -ComputerName dcorp-adminsrv
 ```
+### Find shares on hosts in current domain.
+```powershell
+Invoke-ShareFinder -Verbose
+```
+### Find sensitive files on computers in the domain
+```powershell
+Invoke-FileFinder -Verbose
+```
+### Get all fileservers of the domain
+```powershell
+Get-NetFileServer
+```
+### OR We can find SMB SHARES using PowerHuntShares.psm1 tool
+**Note:** saved all doamin users inside a text file, and let's see anyone have read/write access in share or not. Start PowerShell new tab session using Invisi-Shell:
+```powershell
+C:\AD\Tools\InviShell\RunWithRegistryNonAdmin.bat
+Import-Module C:\AD\Tools\PowerHuntShares.psm1
+Invoke-HuntSMBShares -NoPing -OutputDirectory C:\AD\Tools\ -HostList C:\AD\Tools\<domain user file name>
+```
+**Note:** You need to copy the summary report to your host machine because the report needs interent access. The Summary Report page shows, well, the summary.
+
 {% endtab %} 
 
 {% tab title="AD Module" %}
