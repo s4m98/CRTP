@@ -1,5 +1,6 @@
 # General
 📝 **Note:** import PowerView.ps1 script;)
+
 {% tabs %} {% tab title="PowerView" %}
 ### Get Current User
 ```batch
@@ -102,6 +103,7 @@ Get-LoggedonLocal -ComputerName dcorp-adminsrv
 ```batch
 Get-LastLoggedOn -ComputerName dcorp-adminsrv
 ```
+{% endtab %}
 
 ### Tasklist
 
