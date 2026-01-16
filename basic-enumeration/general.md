@@ -226,7 +226,7 @@ Get-HotFix | ft -AutoSize
 {% endtab %}
 {% endtabs %}
 
-### Kllist
+### Klist
 
 ```powershell
 # Get all the key list
