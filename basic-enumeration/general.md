@@ -132,8 +132,9 @@ C:\AD\Tools\InviShell\RunWithRegistryNonAdmin.bat
 Import-Module C:\AD\Tools\ADModule-master\Microsoft.ActiveDirectory.Management.dll
 Import-Module C:\AD\Tools\ADModule-master\ActiveDirectory\ActiveDirectory.psd1
 ```
-# Enumerate all the users in the current domain using the ADModule:
+
 ```powershell
+# Enumerate all the users in the current domain using the ADModule:
 Get-ADUser -Filter *
 
 # list specific properties:
@@ -142,8 +143,11 @@ Get-ADUser -Filter * -Properties *| select Samaccountname,Description
 # list all the computers:
 Get-ADComputer -Filter *
 
-Enumerate Domain Administrators:
+# Enumerate Domain Administrators:
 Get-ADGroupMember -Identity 'Domain Admins'
+
+# Enumerate the Enterprise Administrators:
+Get-ADGroupMember -Identity 'Enterprise Admins' -Server moneycorp.local
 
 ```
 
