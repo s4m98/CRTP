@@ -26,6 +26,19 @@ Get-DomainUser | Select-Object samaccountname, logoncount
 ```powershell
 Get-Domain
 ```
+### To see details of the Domain Admins group:
+```powershell
+Get-DomainGroup -Identity "Domain Admins"
+```
+### enumerate members of the Domain Admins group:
+```powershell
+Get-DomainGroupMember -Identity "Domain Admins"
+```
+### enumerate members of the Enterprise Admins group
+```powershell
+Get-DomainGroupMember -Identity "Enterprise Admins"
+Get-DomainGroupMember -Identity "Enterprise Admins" -Domain moneycorp.local
+```
 ### Get object of another domain
 ```powershell
 Get-Domain -Domain moneycorp.local
@@ -122,6 +135,16 @@ Import-Module C:\AD\Tools\ADModule-master\ActiveDirectory\ActiveDirectory.psd1
 ## Enumerate all the users in the current domain using the ADModule:
 ```powershell
 Get-ADUser -Filter *
+
+# list specific properties:
+Get-ADUser -Filter * -Properties *| select Samaccountname,Description
+
+# list all the computers:
+Get-ADComputer -Filter *
+
+Enumerate Domain Administrators:
+Get-ADGroupMember -Identity 'Domain Admins'
+
 ```
 
 {% endtab %} 
