@@ -103,7 +103,8 @@ Get-LoggedonLocal -ComputerName dcorp-adminsrv
 ```batch
 Get-LastLoggedOn -ComputerName dcorp-adminsrv
 ```
-{% endtab %} {% endtabs %}
+{% endtab %} 
+{% endtabs %}
 
 {% tab title="AD Module" %}
 Enumerate all the users in the current domain using the ADModule:
@@ -113,7 +114,8 @@ Import-Module C:\AD\Tools\ADModule-master\Microsoft.ActiveDirectory.Management.d
 Import-Module C:\AD\Tools\ADModule-master\ActiveDirectory\ActiveDirectory.psd1
 Get-ADUser -Filter *
 ```
-{% endtab %} {% endtabs %}
+{% endtab %} 
+{% endtabs %}
 
 
 ### Tasklist
