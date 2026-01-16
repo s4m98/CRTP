@@ -51,6 +51,10 @@ Get-DomainUser Get-DomainUser -Identity student1
 ```batch
 Get-DomainUser -Identity student1 -Properties * Get-DomainUser -Properties samaccountname,logonCount
 ```
+{% hint style="info" %}
+If the logon count and the bad password count of a user is tending to 0 it might be a decoy account. If the password last set of a user was also long back it might be a decoy account.
+{% endhint %}
+
 ### Search for a particular string in a user’s attributes:
 ```batch
 Get-DomainUser -LDAPFilter "Description=*built*" | Select name,Description
