@@ -45,13 +45,13 @@ In **legacy** Bloodhound remove **Certservices**. For Community Edition it’s f
 ### To enumerate the ACLs for the Applocked and DevOps GPO, let's use the BloodHound CE UI.
 
 ### Search for Applocker in the UI -> Click on the node -> Click on Inboud Object Control
-<figure><img src="../assets/bloodhount-1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../assets/bloodhound-1.png" alt=""><figcaption></figcaption></figure>
 
 ### It turns out that the RDPUsers group has GenericAll over the policy.
 
 ### Similary, search for DevOps and look at its 'Inbound Object Control':
 
-<figure><img src="../assets/bloodhount-2.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../assets/bloodhound-2.png" alt=""><figcaption></figcaption></figure>
 
 ### A user named 'devopsadmin' has 'WriteDACL' on DevOps Policy.
 
