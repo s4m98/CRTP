@@ -140,6 +140,9 @@ Invoke-FileFinder -Verbose
 ```powershell
 Get-NetFileServer
 ```
+{% endtab %}
+
+{% tabs %}
 ### OR We can find SMB SHARES using PowerHuntShares.psm1 tool
 **Note:** saved all doamin users inside a text file, and let's see anyone have read/write access in share or not. Start PowerShell new tab session using Invisi-Shell:
 ```powershell
