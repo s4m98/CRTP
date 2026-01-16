@@ -114,10 +114,12 @@ Get-LastLoggedOn -ComputerName dcorp-adminsrv
 C:\AD\Tools\InviShell\RunWithRegistryNonAdmin.bat
 Import-Module C:\AD\Tools\ADModule-master\Microsoft.ActiveDirectory.Management.dll
 Import-Module C:\AD\Tools\ADModule-master\ActiveDirectory\ActiveDirectory.psd1
-
+```
 ## Enumerate all the users in the current domain using the ADModule:
+```powershell
 Get-ADUser -Filter *
 ```
+
 {% endtab %} 
 {% endtabs %}
 
