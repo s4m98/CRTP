@@ -3,6 +3,10 @@
 
 {% tabs %} 
 {% tab title="PowerView" %}
+### Start a PowerShell session using Invisi-Shell to avoid enhanced logging:
+```batch
+C:\AD\Tools\InviShell\RunWithRegistryNonAdmin.bat
+```
 
 ### Get Current User
 ```powershell
