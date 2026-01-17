@@ -36,6 +36,7 @@ This guide offer a sufficiently comprehensive overview of the course material fo
 
 ```powershell
 # PowerUp
+Import-Module PowerUp.ps1
 Invoke-AllChecks
 
 # winPEAS
