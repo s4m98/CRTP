@@ -164,9 +164,7 @@ C:\AD\Tools\netcat-win32-1.12\nc64.exe -lvp 443
 We can now run commands on the reverse shell:
 ```powershell
 $env:username
-
 ipconfig
-
 $env:computername
 ```
 
