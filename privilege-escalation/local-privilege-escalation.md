@@ -122,7 +122,6 @@ sc.exe sdshow <servicename>
 ### Local Privilege Escalation using Jenkins - PowerUp
 
 {% tabs %}
-{% tab title="PowerUp.ps1" %}
 
 ```batch
 C:\AD\Tools\InviShell\RunWithRegistryNonAdmin.bat
