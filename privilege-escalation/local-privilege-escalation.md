@@ -140,6 +140,7 @@ You can use WinPEAS using the following command. Note that we use an obfuscated 
 ```batch
 C:\AD\Tools\Loader.exe -Path C:\AD\Tools\winPEASx64.exe -args notcolor log
 ```
+{% endtab %}
 
 ## Local Privilege Escalation - PrivEscCheck
 
@@ -151,6 +152,12 @@ Similarly, we can use PrivEscCheck (https://github.com/itm4n/PrivescCheck) for a
 . C:\AD\Tools\PrivEscCheck.ps1
 Invoke-PrivescCheck
 ```
+**📝 Tip:** PrivEscCheck gives cleaner output than WinPEAS.
+
+{% endtab %}
+{% endtabs %}
+
+{% tabs %}
 
 ## Hunt for Local Admin access
 ### Now for the next task, to identify a machine in the domain where studentx has local administrative access, use Find-PSRemotingLocalAdminAccess.ps1:
