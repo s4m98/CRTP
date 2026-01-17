@@ -117,7 +117,7 @@ sc.exe sdshow <servicename>
 ```
 {% endtab %}
 
-## Local Privilege Escalation using Jenkins - PowerUp
+### Local Privilege Escalation using Jenkins - PowerUp
 
 {% tabs %}
 {% tab title="PowerUp.ps1" %}
@@ -130,13 +130,11 @@ C:\AD\Tools\InviShell\RunWithRegistryNonAdmin.bat
 Invoke-AllChecks
 ```
 
-## Local Privilege Escalation - WinPEAS
+### Local Privilege Escalation - WinPEAS
 
 {% tabs %}
 {% tab title="WinPEAS" %}
-
 You can use WinPEAS using the following command. Note that we use an obfuscated version of WinPEAS:
-
 ```batch
 C:\AD\Tools\Loader.exe -Path C:\AD\Tools\winPEASx64.exe -args notcolor log
 ```
