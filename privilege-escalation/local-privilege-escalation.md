@@ -145,7 +145,8 @@ Invoke-ServiceAbuse -Name 'AbyssWebServer' -UserName 'dcorp\studentx' -Verbose
 {% tabs %}
 {% tab title=WinPEAS %}
 
-### You can use WinPEAS using the following command. Note that we use an obfuscated version of WinPEAS:
+You can use WinPEAS using the following command. Note that we use an obfuscated version of WinPEAS:
+
 ```batch
 C:\AD\Tools\Loader.exe -Path C:\AD\Tools\winPEASx64.exe -args notcolor log
 ```
