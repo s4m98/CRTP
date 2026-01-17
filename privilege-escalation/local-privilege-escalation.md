@@ -47,17 +47,17 @@ Invoke-PrivEsc
 ```
 ### Manual Check Unquoted Service Path:
 
-### How to Find Unquoted Service Paths using CMD:
+#### How to Find Unquoted Service Paths using CMD:
 
 ```batch
 C:\> wmic service get name,pathname,startmode | findstr /v /i system32  | findstr /v \"
 ```
-### Find service path location
+#### Find service path location
 ```batch
 C:\> sc qc unquotedsvc
 ```
 
-### Using accesschk.exe, note that the BUILTIN\Users group is allowed to write to the C:\Program Files\Unquoted Path Service\ directory:
+#### Using accesschk.exe, note that the BUILTIN\Users group is allowed to write to the C:\Program Files\Unquoted Path Service\ directory:
 ```batch
 C:\PrivEsc\accesschk.exe /accepteula -uwdq "C:\Program Files\Unquoted Path Service\"
 ```
