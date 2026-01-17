@@ -121,8 +121,6 @@ sc.exe sdshow <servicename>
 
 ### Local Privilege Escalation using Jenkins - PowerUp
 
-{% tabs %}
-
 ```batch
 C:\AD\Tools\InviShell\RunWithRegistryNonAdmin.bat
 ```
@@ -170,9 +168,6 @@ $env:username
 ipconfig
 
 $env:computername
-
-{% endtab %}
-{% endtabs %}
 
 ### Local Privilege Escalation - WinPEAS
 
