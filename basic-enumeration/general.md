@@ -80,6 +80,8 @@ Get-DomainUser -LDAPFilter "Description=*built*" | Select name,Description
 ```
 ### Get a list of computers in the current domain
 ```powershell
+Get-DomainComputer | select -ExpandProperty dnshostname
+|| OR ||
 Get-DomainComputer | select Name Get-DomainComputer -OperatingSystem "*Server 2022*" Get-DomainComputer -Ping
 ```
 ### Get all the groups in the current domain
