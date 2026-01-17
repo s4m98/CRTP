@@ -151,23 +151,24 @@ Import-Module C:\AD\Tools\PowerHuntShares.psm1
 Invoke-HuntSMBShares -NoPing -OutputDirectory C:\AD\Tools\ -HostList C:\AD\Tools\<domain user file name>
 ```
 **Invoke-HuntSMBShare Script Result:**
-  Note: This can take hours to run in large environments.
+
+Note: This can take hours to run in large environments.
  ---------------------------------------------------------------
  |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
  ---------------------------------------------------------------
  SHARE DISCOVERY
  ---------------------------------------------------------------
- [*][01/17/2026 10:43] Scan Start
- [*][01/17/2026 10:43] Output Directory: C:\AD\Tools\\SmbShareHunt-01172026104332
- [*][01/17/2026 10:43] Importing computer targets from C:\AD\Tools\servers.txt
- [*][01/17/2026 10:43] 8 systems will be targeted
- [*][01/17/2026 10:43] - Skipping ping scan.
- [*][01/17/2026 10:43] Checking if TCP Port 445 is open on 8 computers
- [*][01/17/2026 10:43] - 8 computers have TCP port 445 open.
- [*][01/17/2026 10:43] Getting a list of SMB shares from 8 computers
- [*][01/17/2026 10:43] - 23 SMB shares were found.
- [*][01/17/2026 10:43] Getting share permissions from 23 SMB shares
- [*][01/17/2026 10:43] - 0 share permissions were enumerated.
+ [*][01/17/2026 10:43] Scan Start\
+ [*][01/17/2026 10:43] Output Directory: C:\AD\Tools\\SmbShareHunt-01172026104332\
+ [*][01/17/2026 10:43] Importing computer targets from C:\AD\Tools\servers.txt\
+ [*][01/17/2026 10:43] 8 systems will be targeted\
+ [*][01/17/2026 10:43] - Skipping ping scan.\
+ [*][01/17/2026 10:43] Checking if TCP Port 445 is open on 8 computers\
+ [*][01/17/2026 10:43] - 8 computers have TCP port 445 open.\
+ [*][01/17/2026 10:43] Getting a list of SMB shares from 8 computers\
+ [*][01/17/2026 10:43] - 23 SMB shares were found.\
+ [*][01/17/2026 10:43] Getting share permissions from 23 SMB shares\
+ [*][01/17/2026 10:43] - 0 share permissions were enumerated.\
  [*][01/17/2026 10:43] - Aborting.
 
 
