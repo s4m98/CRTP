@@ -131,6 +131,10 @@ C:\AD\Tools\InviShell\RunWithRegistryNonAdmin.bat
 . C:\AD\Tools\PowerUp.ps1
 Invoke-AllChecks
 ```
+Abuse Jenkins Instance
+Next, let's try our hands on the Jenkins instance. To be able to execute commands on Jenkins server without admin access we must have privileges to Configure builds. We have a misconfigured Jenkins instance on dcorp-ci (http://172.16.3.11:8080). If we go to the "People" page of Jenkins we can see the users present on the Jenkins instance. Remember to use Edge to open the Jenkins web console!
+
+
 {% endtab %}
 {% endtabs %}
 
