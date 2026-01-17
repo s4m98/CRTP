@@ -45,7 +45,7 @@ winPEASx64.exe
 # Privesc
 Invoke-PrivEsc
 ```
-### Manual Check Unquoted Service Path:
+## Manual Check Unquoted Service Path:
 
 #### How to Find Unquoted Service Paths using CMD:
 
