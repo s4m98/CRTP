@@ -116,6 +116,7 @@ Get ACLs of running service
 sc.exe sdshow <servicename>
 ```
 {% endtab %}
+{% endtabs %}
 
 ### Local Privilege Escalation using Jenkins - PowerUp
 
