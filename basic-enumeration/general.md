@@ -1,7 +1,7 @@
 # General
 📝 **Note:** import PowerView.ps1 script;)
 
-{% tab %} 
+{% tabs %} 
 {% tab title="PowerView" %}
 
 ### Start a PowerShell session using Invisi-Shell to avoid enhanced logging:
@@ -154,6 +154,7 @@ Invoke-HuntSMBShares -NoPing -OutputDirectory C:\AD\Tools\ -HostList C:\AD\Tools
 **TIP:** Go to ShareGraph -> search dcorp-ci -> Right click on dcorp-ci node -> Click expand. Tt turns out that 'Everyone' has privileges on the 'AI' folder.
 <figure><img src="../assets/powerhuntshare-2.png" alt=""><figcaption></figcaption></figure>
 
+{% endtab %}
 
 {% tab title="AD Module" %}
 **Note:** First Import AD Module DLL file using this command
