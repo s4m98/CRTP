@@ -9,10 +9,10 @@ The goal is to OS level command execution on all 5 targets not matter what the p
 
 #### There are various ways of locally escalating privileges on Windows box:
 
-* Missing patches – Automated deployment and AutoLogon passwords in clear text
-* AlwaysInstallElevated (Any user can run MSI as SYSTEM)
-* Misconfigured Services – DLL Hijacking and more
-* NTLM Relaying a.k.a. Won't Fix
+*  **Missing patches** – Automated deployment and AutoLogon passwords in clear text
+* **AlwaysInstallElevated** (Any user can run MSI as SYSTEM)
+* **Misconfigured Services** – DLL Hijacking and more
+* **NTLM Relaying** a.k.a. Won't Fix
 
 This guide offer a sufficiently comprehensive overview of the course material for local privilege escalation
 
