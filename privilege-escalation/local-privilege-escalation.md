@@ -132,6 +132,7 @@ C:\AD\Tools\InviShell\RunWithRegistryNonAdmin.bat
 Invoke-AllChecks
 ```
 {% endtab %}
+{% endtabs %}
 
 ### Local Privilege Escalation - WinPEAS
 
