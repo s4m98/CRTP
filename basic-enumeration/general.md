@@ -144,7 +144,7 @@ Get-NetFileServer
 ```
 
 ### OR We can find SMB SHARES using PowerHuntShares.psm1 tool
-**Note:** saved all doamin host name inside a text file, and let's see anyone have read/write access in share or not. Start PowerShell new tab session using Invisi-Shell:
+**Note:** saved all domain hostname/computersname inside a text file, and let's see anyone have read/write access in share or not. Start PowerShell new tab session using Invisi-Shell:
 ```powershell
 C:\AD\Tools\InviShell\RunWithRegistryNonAdmin.bat
 Import-Module C:\AD\Tools\PowerHuntShares.psm1
