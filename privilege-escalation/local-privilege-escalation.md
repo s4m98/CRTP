@@ -155,12 +155,8 @@ Invoke-PrivescCheck
 ```
 **📝 Tip:** PrivEscCheck gives cleaner output than WinPEAS.
 
-{% endtab %}
-{% endtabs %}
 
-{% tabs %}
-
-## Hunt for Local Admin access
+### Hunt for Local Admin access
 Now for the next task, to identify a machine in the domain where studentx has local administrative access, use Find-PSRemotingLocalAdminAccess.ps1:
 
 ```batch
