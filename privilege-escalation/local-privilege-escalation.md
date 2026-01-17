@@ -45,6 +45,25 @@ winPEASx64.exe
 # Privesc
 Invoke-PrivEsc
 ```
+### Manual Check Unquoted Service Path:
+
+### How to Find Unquoted Service Paths using CMD:
+
+```batch
+C:\> wmic service get name,pathname,startmode | findstr /v /i system32  | findstr /v \"
+```
+### Find service path location
+```batch
+C:\> sc qc unquotedsvc
+```
+
+### Using accesschk.exe, note that the BUILTIN\Users group is allowed to write to the C:\Program Files\Unquoted Path Service\ directory:
+```batch
+C:\PrivEsc\accesschk.exe /accepteula -uwdq "C:\Program Files\Unquoted Path Service\"
+```
+
+<img width="2386" height="628" alt="image" src="https://github.com/user-attachments/assets/07bc0f13-45c8-44e6-8107-ebee29ee8611" />
+
 
 ## Services
 
