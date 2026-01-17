@@ -141,10 +141,16 @@ Invoke-ServiceAbuse -Name 'AbyssWebServer' -UserName 'dcorp\studentx' -Verbose
 {% endtabs %}
 
 ## Local Privilege Escalation - WinPEAS
+
+{% tabs %}
+{% tab title=WinPEAS %}
+
 ### You can use WinPEAS using the following command. Note that we use an obfuscated version of WinPEAS:
 ```batch
 C:\AD\Tools\Loader.exe -Path C:\AD\Tools\winPEASx64.exe -args notcolor log
 ```
+{% endtab %}
+{% endtabs %}
 
 ## Local Privilege Escalation - PrivEscCheck
 ### Similarly, we can use PrivEscCheck (https://github.com/itm4n/PrivescCheck) for a nice summary of possible privilege escalation opportunities:
