@@ -116,7 +116,6 @@ Get ACLs of running service
 sc.exe sdshow <servicename>
 ```
 {% endtab %}
-{% endtabs %}
 
 ## Local Privilege Escalation using Jenkins - PowerUp
 
@@ -143,7 +142,7 @@ Invoke-ServiceAbuse -Name 'AbyssWebServer' -UserName 'dcorp\studentx' -Verbose
 ## Local Privilege Escalation - WinPEAS
 
 {% tabs %}
-{% tab title=WinPEAS %}
+{% tab title="WinPEAS" %}
 
 You can use WinPEAS using the following command. Note that we use an obfuscated version of WinPEAS:
 
@@ -154,12 +153,17 @@ C:\AD\Tools\Loader.exe -Path C:\AD\Tools\winPEASx64.exe -args notcolor log
 {% endtabs %}
 
 ## Local Privilege Escalation - PrivEscCheck
-### Similarly, we can use PrivEscCheck (https://github.com/itm4n/PrivescCheck) for a nice summary of possible privilege escalation opportunities:
+
+{% tabs %}
+{% tab title="PrivEscCheck" %}
+
+Similarly, we can use PrivEscCheck (https://github.com/itm4n/PrivescCheck) for a nice summary of possible privilege escalation opportunities:
 
 ```powershell
 . C:\AD\Tools\PrivEscCheck.ps1
 Invoke-PrivescCheck
 ```
+{% endtab %}
 
 ## Hunt for Local Admin access
 ### Now for the next task, to identify a machine in the domain where studentx has local administrative access, use Find-PSRemotingLocalAdminAccess.ps1:
