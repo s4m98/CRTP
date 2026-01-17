@@ -1,13 +1,13 @@
 # General
 📝 **Note:** import PowerView.ps1 script;)
 
-{% tabs %} 
+{% tab %} 
 {% tab title="PowerView" %}
+
 ### Start a PowerShell session using Invisi-Shell to avoid enhanced logging:
 ```batch
 C:\AD\Tools\InviShell\RunWithRegistryNonAdmin.bat
 ```
-
 ### Get Current User
 ```powershell
 Get-DomainUser
@@ -184,7 +184,6 @@ Get-ADGroupMember -Identity 'Enterprise Admins' -Server moneycorp.local
 
 {% endtab %} 
 {% endtabs %}
-
 
 ### Tasklist
 
