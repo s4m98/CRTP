@@ -44,6 +44,7 @@ winPEASx64.exe
 # more stealthy,stable output
 C:\AD\Tools\Loader.exe -Path C:\AD\Tools\winPEASx64.exe -args notcolor log
 
+As Result it saved output in log.txt file
 **TIP:** Red Team Decision: Should we ALWAYS use it?
 ✅ Short Answer: **YES** — 90% of the time
 
