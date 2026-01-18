@@ -9,7 +9,7 @@ When capturing a [NTLMv1/2](https://www.vaadata.com/blog/understanding-ntlm-auth
 The relayed user must have privilege on the target.
 {% endhint %}
 
-### Valid targets <a href="#valid-targets" id="valid-targets"></a>
+### Valid targets
 
 In order to relay hashes, we must have valid targets. **Valid targets are machines with SMB Signing disabled**.
 
