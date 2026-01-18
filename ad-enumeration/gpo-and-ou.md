@@ -52,7 +52,8 @@ Get OUs in a domain
 ```powershell
 # Get all domain OUs
 Get-DomainOU
-
+# Get Only OUs Name:
+Get-DomainOU | select -ExpandProperty name
 # Get all computers inside an OU
 (Get-DomainOU -Identity StudentMachines).distinguishedname | %{Get-DomainComputer -SearchBase $_} | select name
 ```
