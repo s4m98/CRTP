@@ -22,16 +22,12 @@ Find-LocalAdminAccess -Verbose
 . C:\AD\Tools\Find-WMILocalAdminAccess.ps1
 # execute
 Find-WMILocalAdminAccess
-
 || OR ||
-
 #Load(Uses WinRM)
 . C:\AD\Tools\Find-PSRemotingLocalAdminAccess.ps1
 # execute
 Find-PSRemotingLocalAdminAccess -Verbose
-
 || OR ||
-
 # We can also use PowerShell Remoting:
 Enter-PSSession -ComputerName dcorp-adminsrv.dollarcorp.moneycorp.local
 $env:username
@@ -60,6 +56,7 @@ Invoke-SessionHunter -NoPortScan -Targets C:\AD\Tools\servers.txt
 ```
 {% endtab %}
 {% endtabs %}
+
 
 
 
