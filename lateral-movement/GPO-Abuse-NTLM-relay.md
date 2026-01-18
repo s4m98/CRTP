@@ -156,7 +156,7 @@ write_gpo_dacl studentx {0BF8D01C-1F62-4BDC-958C-57140B67D147}
 
 Now malicious GPO template can injected through GPOddity - [https://github.com/synacktiv/GPOddity](https://github.com/synacktiv/GPOddity)
 
-# In linux machine change to the tool directory
+##### In linux machine change to the tool directory
 ```batch
 cd /mnt/c/AD/Tools/GPOddity
 # Use the GPOddity
