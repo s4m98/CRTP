@@ -30,7 +30,8 @@ cme smb <networkIP>/<cidr> --gen-relay-list relayTargets.txt
 GPO abuse for admin access on dcorp-ci
 
 early, we enumerated that there is a directory called '**AI**' on the dcorp-ci machine where '**Everyone**' has access. Looking at the directory (**\\dcorp-ci\AI**), we will find a log file.
-<figure><img src="../assets/gpo-abuse-1.png"
+<figure><img src="../assets/gpo-abuse-1.png" alt=""><figcaption></figcaption></figure>
+
 
 It turns out that the '**AI**' folder is used for testing some automation that executes shortcuts (.lnk files) as the user '**devopsadmin**'. Recall that we enumerated a user '**devopsadmin**' has '**WriteDACL**' on **DevOps Policy**. Let's try to abuse this using **GPOddity**.
 
