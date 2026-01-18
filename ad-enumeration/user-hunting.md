@@ -9,7 +9,7 @@ Get-NetLocalGroupMember -ComputerName COMPUTER_NAME -GroupName "Remote Desktop U
 Get-NetLocalGroupMember -ComputerName COMPUTER_NAME -GroupName "Remote Management Users"
 ```
 
-#### Find all machines on the current domain where the current user has local admin access
+Find all machines on the current domain where the current user has local admin access
 
 ```powershell
 # Very noisy uses SMB
@@ -37,7 +37,7 @@ Enter-PSSession -ComputerName dcorp-adminsrv.dollarcorp.moneycorp.local
 $env:username
 ```
 
-#### Find machines where a domain admin has sessions
+Find machines where a domain admin has sessions
 
 ```powershell
 # Very noisy and needs admin privileges
@@ -60,5 +60,6 @@ Invoke-SessionHunter -NoPortScan -Targets C:\AD\Tools\servers.txt
 ```
 {% endtab %}
 {% endtabs %}
+
 
 
