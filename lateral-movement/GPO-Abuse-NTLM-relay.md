@@ -1,7 +1,6 @@
 # GPO Abuse NTLM-Relay Attack:
 
 ### Relaying hashes <a href="#relaying-hashes" id="relaying-hashes"></a>
-![NTLM Relay](../assets/ntlm-relay-1.png)
 
 <figure><img src="../assets/image.png" alt=""><figcaption><p>Found from <a href="https://aas-s3curity.gitbook.io/cheatsheet/internalpentest/active-directory/exploitation/exploit-without-account/smb-relay">here</a></p></figcaption></figure>
 
@@ -27,7 +26,7 @@ Run the following command in Ubuntu to execute ntlmrelayx. Keep in mind the foll
 ```batch
 sudo ntlmrelayx.py -t ldaps://172.16.2.1 -wh 172.16.100.x --http-port '80,8080' -i --no-smb-server
 ```
-<figure><img src="../assets/ntlm-relay-1.png" alt=""><figcaption></figcaption></figure>
+![NTLM Relay](../assets/ntlm-relay-1.png)
 
 On the student VM, let's create a Shortcut that connects to the ntlmrelayx listener. Go to **C:\AD\Tools -> Right Click -> New -> Shortcut**. Copy the following command in the Shortcut location:
 
