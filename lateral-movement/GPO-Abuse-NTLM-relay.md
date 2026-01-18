@@ -1,8 +1,9 @@
 # GPO Abuse NTLM-Relay Attack:
 
 ### Relaying hashes <a href="#relaying-hashes" id="relaying-hashes"></a>
+![NTLM Relay](../assets/image.png)
 
-<figure><img src="../assets/image.png" alt=""><figcaption><p>Found from <a href="https://aas-s3curity.gitbook.io/cheatsheet/internalpentest/active-directory/exploitation/exploit-without-account/smb-relay">here</a></p></figcaption></figure>
+alt=""><figcaption><p>Found from <a href="https://aas-s3curity.gitbook.io/cheatsheet/internalpentest/active-directory/exploitation/exploit-without-account/smb-relay">here</a></p></figcaption></figure>
 
 ## Method 1:
 
