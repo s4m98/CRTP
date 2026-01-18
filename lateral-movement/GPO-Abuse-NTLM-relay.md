@@ -110,9 +110,9 @@ The update for this policy is configured to be every 2 minutes in the lab. After
 ```powershell
 C:\AD\Tools>winrs -r:dcorp-ci cmd /c "set computername && set username"
 ```
-**Result:\
-COMPUTERNAME=DCORP-CI\
-USERNAME=studentx**
+**Result:**
+- COMPUTERNAME=DCORP-CI
+- USERNAME=studentx
 
 
 ## Method2:
