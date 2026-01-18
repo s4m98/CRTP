@@ -1,7 +1,7 @@
 # GPO Abuse- NTLM-Relay Attack:
 
 ### Relaying hashes 
-![NTLM Relay](../assets/ntlm-relay.jpg)
+![NTLM Relay](/assets/ntlm-relay.jpg)
 
 ## Method 1:
 
