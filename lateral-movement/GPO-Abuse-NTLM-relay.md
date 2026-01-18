@@ -125,7 +125,8 @@ Get-DomainGPO -Identity 'DevOps Policy'
 <figure><img src="../assets/gpoddity-3.png"
 
 The update for this policy is configured to be every 2 minutes in the lab. After waiting for 2 minutes, studentx should be added to the local administrators group on dcorp-ci:
-```batch
+
+```powershell
 C:\AD\Tools>winrs -r:dcorp-ci cmd /c "set computername && set username"
 ```
 **Result:\
