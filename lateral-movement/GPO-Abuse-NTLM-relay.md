@@ -1,6 +1,8 @@
 # GPO Abuse NTLM-Relay Attack:
 
 ### Relaying hashes <a href="#relaying-hashes" id="relaying-hashes"></a>
+![GPO Abuse](assets/gpo-abuse-1.png)
+*Figure: GPO Abuse via NTLM Relay*
 
 <figure><img src="../assets/image.png" alt=""><figcaption><p>Found from <a href="https://aas-s3curity.gitbook.io/cheatsheet/internalpentest/active-directory/exploitation/exploit-without-account/smb-relay">here</a></p></figcaption></figure>
 
@@ -9,7 +11,10 @@
 GPO abuse for admin access on dcorp-ci
 
 early, we enumerated that there is a directory called '**AI**' on the dcorp-ci machine where '**Everyone**' has access. Looking at the directory (**\\dcorp-ci\AI**), we will find a log file.
-<figure><img src="../assets/gpo-abuse-1.png" alt=""><figcaption></figcaption></figure>
+![GPO Abuse](assets/gpo-abuse-1.png)
+*Figure: GPO Abuse via NTLM Relay*
+
+#<figure><img src="../assets/gpo-abuse-1.png" alt=""><figcaption></figcaption></figure>
 
 
 It turns out that the '**AI**' folder is used for testing some automation that executes shortcuts (.lnk files) as the user '**devopsadmin**'. Recall that we enumerated a user '**devopsadmin**' has '**WriteDACL**' on **DevOps Policy**. Let's try to abuse this using **GPOddity**.
