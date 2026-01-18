@@ -11,7 +11,7 @@ Get-NetLocalGroupMember -ComputerName COMPUTER_NAME -GroupName "Remote Desktop U
 Get-NetLocalGroupMember -ComputerName COMPUTER_NAME -GroupName "Remote Management Users"
 ```
 
-Find all machines on the current domain where the current user has local admin access
+### Find all machines on the current domain where the current user has local admin access
 
 ```powershell
 # Very noisy uses SMB
@@ -24,14 +24,18 @@ Find-LocalAdminAccess -Verbose
 . C:\AD\Tools\Find-WMILocalAdminAccess.ps1
 # execute
 Find-WMILocalAdminAccess
-
+|| OR ||
 #Load(Uses WinRM)
 . C:\AD\Tools\Find-PSRemotingLocalAdminAccess.ps1
 # execute
 Find-PSRemotingLocalAdminAccess -Verbose
+|| OR ||
+# We can also use PowerShell Remoting:
+Enter-PSSession -ComputerName dcorp-adminsrv.dollarcorp.moneycorp.local
+$env:username
 ```
 
-Find machines where a domain admin has sessions
+### Find machines where a domain admin has sessions
 
 ```powershell
 # Very noisy and needs admin privileges
@@ -39,6 +43,7 @@ Find-DomainUserLocation -Verbose
 Find-DomainUserLocation -UserGroupIdentity "RDPUsers"
 Find-DomainUserLocation -CheckAccess 
 Find-DomainUserLocation -Stealth # less noisy, targeting file servers
+
 ```
 
 List sessions on remote machines ([source](https://github.com/Leo4j/Invoke-SessionHunter))
