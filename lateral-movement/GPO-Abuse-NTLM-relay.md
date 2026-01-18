@@ -1,4 +1,4 @@
-# NTLM Relay
+# GPO Abuse NTLM-Relay Attack:
 
 When capturing a [NTLMv1/2](https://www.vaadata.com/blog/understanding-ntlm-authentication-and-ntlm-relay-attacks/) hashes with tools like Responder, attackers have two options:
 
