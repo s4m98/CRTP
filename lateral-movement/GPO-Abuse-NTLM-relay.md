@@ -1,26 +1,5 @@
 # GPO Abuse NTLM-Relay Attack:
 
-When capturing a [NTLMv1/2](https://www.vaadata.com/blog/understanding-ntlm-authentication-and-ntlm-relay-attacks/) hashes with tools like Responder, attackers have two options:
-
-* crack it to retrieve cleartext passwords
-* relay it to gain code execution on a target
-
-{% hint style="warning" %}
-The relayed user must have privilege on the target.
-{% endhint %}
-
-### Valid targets
-
-In order to relay hashes, we must have valid targets. **Valid targets are machines with SMB Signing disabled**.
-
-SMB Signing is disabled by default on every Windows OS, except Windows Server.
-
-To create a list file of valid targets, use [CrackMapExec](https://github.com/byt3bl33d3r/CrackMapExec):
-
-```bash
-cme smb <networkIP>/<cidr> --gen-relay-list relayTargets.txt
-```
-
 ### Relaying hashes <a href="#relaying-hashes" id="relaying-hashes"></a>
 
 <figure><img src="../assets/image.png" alt=""><figcaption><p>Found from <a href="https://aas-s3curity.gitbook.io/cheatsheet/internalpentest/active-directory/exploitation/exploit-without-account/smb-relay">here</a></p></figcaption></figure>
@@ -136,6 +115,26 @@ USERNAME=studentx**
 
 
 ## Method2:
+When capturing a [NTLMv1/2](https://www.vaadata.com/blog/understanding-ntlm-authentication-and-ntlm-relay-attacks/) hashes with tools like Responder, attackers have two options:
+
+* crack it to retrieve cleartext passwords
+* relay it to gain code execution on a target
+
+{% hint style="warning" %}
+The relayed user must have privilege on the target.
+{% endhint %}
+
+### Valid targets
+
+In order to relay hashes, we must have valid targets. **Valid targets are machines with SMB Signing disabled**.
+
+SMB Signing is disabled by default on every Windows OS, except Windows Server.
+
+To create a list file of valid targets, use [CrackMapExec](https://github.com/byt3bl33d3r/CrackMapExec):
+
+```bash
+cme smb <networkIP>/<cidr> --gen-relay-list relayTargets.txt
+```
 
 Create a shortcurt lnk file with the below content  and place it inside th shared AI folder.
 
