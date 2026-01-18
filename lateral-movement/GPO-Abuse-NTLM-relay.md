@@ -167,5 +167,5 @@ net share std-anything=C:\AD\Tools\ GPOddity\GPT_out
 icacls "C:\AD\Tools\GPOddity\GPT_out" /grant Everyone:F /T
 # Verify the persmission with
 Get-DomainGPO # Check gpcfilesyspath and whenchanged
-winrs -r:dcorp-ci cmd /c "set computername &&; set username"
+winrs -r:dcorp-ci cmd /c "set computername && set username"
 ```
