@@ -38,6 +38,42 @@ $env:username
 
 Find machines where a domain admin has sessions
 
+List sessions on remote machines ([source](https://github.com/Leo4j/Invoke-SessionHunter))
+
+```powershell
+# Doesn’t need admin access on remote machines. 
+# Uses Remote Registry and queries HKEY_USERS hive.
+C:\AD\Tools\InviShell\RunWithRegistryNonAdmin.bat
+
+. C:\AD\Tools\Invoke-SessionHunter.ps1
+
+Invoke-SessionHunter -NoPortScan -RawResults | select Hostname,UserSession,Access
+
+**command output:**
+
+HostName       UserSession         Access
+--------       -----------         ------
+dcorp-appsrv   dcorp\appadmin       False
+dcorp-ci       dcorp\ciadmin        False
+dcorp-mgmt     dcorp\mgmtadmin      False
+dcorp-mssql    dcorp\sqladmin       False
+dcorp-dc       dcorp\Administrator  False
+dcorp-mgmt     dcorp\svcadmin       False
+us-dc          US\Administrator     False
+dcorp-adminsrv dcorp\appadmin        True
+dcorp-adminsrv dcorp\srvadmin        True
+dcorp-adminsrv dcorp\websvc          True
+
+or
+Invoke-SessionHunter -FailSafe
+
+To make the above enumeration more opsec friendly, no need admin privileges and avoid triggering tools like MDI, we can query specific target machines. You need to create 'servers.txt' to use the below command.
+Invoke-SessionHunter -NoPortScan -Targets C:\AD\Tools\servers.txt | select Hostname,UserSession,Access
+```
+<figure><img src="../assets/invoke-sessionhunter.png" alt=""><figcaption></figcaption></figure>
+
+OR
+
 ```powershell
 # Very noisy and needs admin privileges
 Find-DomainUserLocation -Verbose
@@ -47,17 +83,8 @@ Find-DomainUserLocation -Stealth # less noisy, targeting file servers
 
 ```
 
-List sessions on remote machines ([source](https://github.com/Leo4j/Invoke-SessionHunter))
-
-```powershell
-# Doesn’t need admin access on remote machines. 
-# Uses Remote Registry and queries HKEY_USERS hive.
-Invoke-SessionHunter -FailSafe
-
-# Opsec friendly and don't need admin privileges
-Invoke-SessionHunter -NoPortScan -Targets C:\AD\Tools\servers.txt
-```
 {% endtab %}
 {% endtabs %}
+
 
 
