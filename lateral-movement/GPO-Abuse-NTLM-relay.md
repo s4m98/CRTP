@@ -1,5 +1,7 @@
 # GPO Abuse- NTLM-Relay Attack:
 
+{% tabs %}
+
 ### Relaying hashes 
 ![NTLM Relay](/assets/ntlm-relay.jpg)
 
@@ -170,3 +172,5 @@ icacls "C:\AD\Tools\GPOddity\GPT_out" /grant Everyone:F /T
 Get-DomainGPO # Check gpcfilesyspath and whenchanged
 winrs -r:dcorp-ci cmd /c "set computername && set username"
 ```
+{% endtab %} 
+{% endtabs %}
