@@ -1,4 +1,5 @@
 # GPO Abuse- NTLM-Relay Attack:
+NTLM Relay is an attack where an attacker steals a login attempt and forwards it to another machine to log in as the victim — without knowing the password.
 
 {% tabs %}
 
