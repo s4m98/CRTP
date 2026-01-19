@@ -48,6 +48,11 @@ system.Get-AppLockerPolicy -Effective | select -ExpandProperty RuleCollections
 These two commands together answer:
 **“Is PowerShell restricted, and what application execution rules are enforcing that restriction?”**
 
+{% hint style="warning" %}
+in the Constrained Language Mode, we cannot run scripts using dot sourcing (. .\Invoke-Mimi.ps1). So, we must modify Invoke-Mimi.ps1 to include the function call in the script itself and transfer the modified script (Invoke-MimiEx.ps1) to the target server.
+{% endhint %}
+
+
 ### Execution Policy
 
 Several ways to bypass
