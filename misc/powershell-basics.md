@@ -42,7 +42,11 @@ _FullLanguage_ mode is what attackers prefer most. _Constrained Language_(introd
 
 ```powershell
 $ExecutionContext.SessionState.LanguageMode
+#Retrieves the effective AppLocker policy applied to the current system.
+system.Get-AppLockerPolicy -Effective | select -ExpandProperty RuleCollections
 ```
+These two commands together answer:
+**“Is PowerShell restricted, and what application execution rules are enforcing that restriction?”**
 
 ### Execution Policy
 
