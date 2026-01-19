@@ -1,6 +1,7 @@
 # GPO Abuse- NTLM-Relay Attack:
 
 {% tabs %}
+{% tab title="PowerView" %}
 
 ### Relaying hashes 
 ![NTLM Relay](/assets/ntlm-relay.jpg)
