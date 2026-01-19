@@ -46,7 +46,7 @@
 * [DC Sync](lateral-movement/dc-sync.md)
 * [Over Pass The Hash](lateral-movement/over-pass-the-hash.md)
 * [Runas](lateral-movement/runas.md)
-* [GPO-Abuse-NTLM-relay](lateral-movement/GPO-Abuse-NTLM-relay.md)
+* [GPO Abuse NTLM relay](lateral-movement/GPO-Abuse-NTLM-relay.md)
 
 ## 🔧 Persistence
 
