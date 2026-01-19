@@ -116,6 +116,7 @@ C:\AD\Tools>winrs -r:dcorp-ci cmd /c "set computername && set username"
 - COMPUTERNAME=DCORP-CI
 - USERNAME=studentx
 
+{% endtab %} 
 
 ## Method2:
 When capturing a [NTLMv1/2](https://www.vaadata.com/blog/understanding-ntlm-authentication-and-ntlm-relay-attacks/) hashes with tools like Responder, attackers have two options:
@@ -171,5 +172,3 @@ icacls "C:\AD\Tools\GPOddity\GPT_out" /grant Everyone:F /T
 Get-DomainGPO # Check gpcfilesyspath and whenchanged
 winrs -r:dcorp-ci cmd /c "set computername && set username"
 ```
-
-{% endtab %} 
