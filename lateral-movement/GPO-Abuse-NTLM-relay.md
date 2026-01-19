@@ -5,15 +5,15 @@
 ### Relaying hashes 
 <figure><img src="../assets/ntlm-relay.jpg" alt=""><figcaption></figcaption></figure>
 
-![NTLM Relay](/assets/ntlm-relay.jpg)
-
 ## Method 1:
 
 GPO abuse for admin access on dcorp-ci
 
 early, we enumerated that there is a directory called '**AI**' on the dcorp-ci machine where '**Everyone**' has access. Looking at the directory (**\\dcorp-ci\AI**), we will find a log file.
 
-![NTLM Relay](/assets/gpo-abuse-1.png)
+<figure><img src="../assets/gpo-abuse-1" alt=""><figcaption></figcaption></figure>
+
+#![NTLM Relay](/assets/gpo-abuse-1.png)
 
 It turns out that the '**AI**' folder is used for testing some automation that executes shortcuts (.lnk files) as the user '**devopsadmin**'. Recall that we enumerated a user '**devopsadmin**' has '**WriteDACL**' on **DevOps Policy**. Let's try to abuse this using **GPOddity**.
 
