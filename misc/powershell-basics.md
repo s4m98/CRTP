@@ -26,6 +26,15 @@ Get-DomainObjectAcl | Select-Object -First 2
 
 Read more about different language modes from [here](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_language_modes?view=powershell-7.5). &#x20;
 
+Types of PowerShell language mode:
+
+**Language Mode                        	Meaning**
+
+**FullLanguage**	          Full PowerShell functionality (normal admin shell)
+**ConstrainedLanguage**	    Restricted execution (AppLocker / WDAC enforced)
+**RestrictedLanguage**	    Very limited (rare)
+**NoLanguage**	            Cmdlets only, no script logic
+
 {% hint style="info" %}
 _FullLanguage_ mode is what attackers prefer most. _Constrained Language_(introduced in PowerShell 3.0) mode in PowerShell is the language mode that allows only signed binaries to run.
 {% endhint %}
