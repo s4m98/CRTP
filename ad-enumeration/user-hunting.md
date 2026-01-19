@@ -84,7 +84,3 @@ Find-DomainUserLocation -Stealth # less noisy, targeting file servers
 ```
 
 {% endtab %}
-{% endtabs %}
-
-
-
