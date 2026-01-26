@@ -16,7 +16,7 @@
 > 8. [ ] SPN
 
 ## 2. Local Priv Esc
-> 1. [ ] Run **powerups.ps1/PowerView.ps1**
+> 1. [ ] Run **powerups.ps1**
 > 2. [ ] **ServiceUnquoted**
 > 3. [ ] **ModifiableServiceFile**
 > 4. [ ] **ModifiableService**
