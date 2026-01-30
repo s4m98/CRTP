@@ -74,6 +74,7 @@ C:\AD\Tools\Loader.exe -path C:\AD\Tools\Rubeus.exe -args kerberoast /user:svcad
 <figure><img src="../assets/kerberosting-hash1.png" alt=""><figcaption></figcaption></figure>
 
 **after:** 
+
 <figure><img src="../assets/kerberosting-hash2.png" alt=""><figcaption></figcaption></figure>
 
 ## Crack
