@@ -43,6 +43,13 @@ in order to get access to WMI namespaces attacker needs to create a new ACE with
 
 ACLs can be modified to allow non-admin users using the [RACE toolkit](https://github.com/samratashok/RACE):
 
+**What is RACE.ps1 Script?**
+
+RACE.ps1 is a PowerShell assessment / proof-of-concept script used in Active Directory security testing to evaluate how restrictive an environment really is when AppLocker or Constrained Language Mode (CLM) is enabled.
+
+**In simple words:**
+It tests whether PowerShell execution restrictions are actually effective.
+
 {% hint style="danger" %}
 Require Domain Admin privileges
 {% endhint %}
@@ -91,3 +98,4 @@ Get-RemoteLocalAccountHash -ComputerName &#x3C;remotehost> -Verbose
 # retrieve domain cached credentials
 Get-RemoteCachedCredential -ComputerName &#x3C;remotehost> -Verbose
 </code></pre>
+
